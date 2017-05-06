@@ -4,6 +4,10 @@ import { View } from 'react-native';
 import { Text } from 'react-native-elements';
 import configureStore from '@src/store';
 
+import SplashScreen from '@src/screen/SplashScreen';
+import Login from '@src/screen/Login';
+import Main from '@src/screen/main/Main'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +28,7 @@ class App extends Component {
 
     return (
       <Provider store={this.state.store}>
-        <View><Text h1>EveryDay App</Text></View>
+        <Main />
       </Provider>
     );
   }

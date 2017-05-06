@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "0.0.29",
+    "eslint-config-rallycoding": "^3.2.0",
     "jest-expo": "^0.4.0",
+    "react-native-scripts": "0.0.29",
     "react-test-renderer": "16.0.0-alpha.6"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -23,6 +24,8 @@
     "react": "16.0.0-alpha.6",
     "react-native": "^0.43.4",
     "react-native-elements": "^0.11.2",
+    "react-native-swiper": "^1.5.4",
+    "react-native-tab-navigator": "^0.3.3",
     "redux-logger": "^3.0.1",
     "redux-persist": "^4.7.1",
     "redux-thunk": "^2.2.0"
