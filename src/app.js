@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { View } from 'react-native';
-import { Text } from 'react-native-elements';
-import configureStore from '@src/store';
+import configureStore from '../src/store';
 
-import SplashScreen from '@src/screen/SplashScreen';
-import Login from '@src/screen/Login';
-import Main from '@src/screen/main/Main'
+//import SplashScreen from '@src/screen/SplashScreen';
+//import Login from '@src/screen/Login';
+import Main from '../src/screen/main/Main';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +14,7 @@ class App extends Component {
       loading: true,
       store: (module.hot && module.hot.data && module.hot.data.store)
                 ? module.hot.data.store
-                : configureStore(() => {this.setState({ loading: false })})
+                : configureStore(() => { this.setState({ loading: false }); })
     };
   }
 

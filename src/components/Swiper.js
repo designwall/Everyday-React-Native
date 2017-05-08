@@ -6,7 +6,6 @@ const { height } = Dimensions.get('window');
 
 export default class SwiperComponent extends Component {
 	renderSwiper(items) {
-		
 		const { titleStyle, subtitleStyle, itemStyle } = styles;
 
 		return items.map(({ key, title, subtitle }) => {
@@ -29,20 +28,20 @@ export default class SwiperComponent extends Component {
 
 		return (
 			<Swiper
-				height={height * 4/15}
+				height={height * (4 / 15)}
 				dotStyle={dot}
 				activeDotStyle={dotActive}
-				showsPagination
-			>
+				showsPagination>
+
 				{this.renderSwiper(this.props.data)}
 			</Swiper>
 		);
 	}
-};
+}
 
 const styles = {
 	dot: {
-		backgroundColor:'white', 
+		backgroundColor: 'white', 
 		width: 8, 
 		height: 8,
 		borderRadius: 4, 
@@ -54,7 +53,7 @@ const styles = {
 	},
 
 	dotActive: {
-		backgroundColor:'white', 
+		backgroundColor: 'white', 
 		width: 8, 
 		height: 8,
 		borderRadius: 4, 

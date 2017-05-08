@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 import Home from './Home';
@@ -7,50 +7,63 @@ import Calendar from './Calendar';
 import Discover from './Discover';
 import Profile from './Profile';
 
+const tabInfo = {
+	home: {
+		icon: require('../../../assets/images/home.png'),
+		iconSelected: require('../../../assets/images/home_s.png'),
+		title: 'Home',
+		display: <Home />
+	},
+	calendar: {
+		icon: require('../../../assets/images/calendar.png'),
+		iconSelected: require('../../../assets/images/calendar_s.png'),
+		title: 'Calendar',
+		display: <Calendar />
+	},
+	discover: {
+		icon: require('../../../assets/images/discover.png'),
+		iconSelected: require('../../../assets/images/discover_s.png'),
+		title: 'Discover',
+		display: <Discover />
+	},
+	profile: {
+		icon: require('../../../assets/images/profile.png'),
+		iconSelected: require('../../../assets/images/profile_s.png'),
+		title: 'Profile',
+		display: <Profile />
+	},
+};
+
 export default class Main extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 
 		this.state = {
 			selectedTab: 'home'
-		}
+		};
+	}
+
+	renderTab(tagName) {
+		const { icon, iconSelected, title, display } = tabInfo[tagName];
+		return (
+			<TabNavigator.Item
+				selected={this.state.selectedTab === tagName}
+				title={title}
+				renderIcon={() => <Image source={icon} />}
+				renderSelectedIcon={() => <Image source={iconSelected} />}
+				onPress={() => this.setState({ selectedTab: tagName })}>
+				{display}
+			</TabNavigator.Item>
+		);
 	}
 
 	render() {
 		return (
 			<TabNavigator>
-				<TabNavigator.Item
-					selected={this.state.selectedTab === 'home'}
-					title="Home"
-					renderIcon={() => <Image source={require('@assets/images/home.png')} />}
-					renderSelectedIcon={() => <Image source={require('@assets/images/home_s.png')} />}
-					onPress={() => this.setState({ selectedTab: 'home' })}>
-					<Home />
-				</TabNavigator.Item>
-				<TabNavigator.Item
-					selected={this.state.selectedTab === 'calendar'}
-					title="Profile"
-					renderIcon={() => <Image source={require('@assets/images/calendar.png')} />}
-					renderSelectedIcon={() => <Image source={require('@assets/images/calendar_s.png')} />}
-					onPress={() => this.setState({ selectedTab: 'calendar' })}>
-					<Calendar />
-				</TabNavigator.Item>
-				<TabNavigator.Item
-					selected={this.state.selectedTab === 'discover'}
-					title="Profile"
-					renderIcon={() => <Image source={require('@assets/images/discovery.png')} />}
-					renderSelectedIcon={() => <Image source={require('@assets/images/discovery_s.png')} />}
-					onPress={() => this.setState({ selectedTab: 'discover' })}>
-					<Discover />
-				</TabNavigator.Item>
-				<TabNavigator.Item
-					selected={this.state.selectedTab === 'profile'}
-					title="Profile"
-					renderIcon={() => <Image source={require('@assets/images/profile.png')} />}
-					renderSelectedIcon={() => <Image source={require('@assets/images/profile_s.png')} />}
-					onPress={() => this.setState({ selectedTab: 'profile' })}>
-					<Profile />
-				</TabNavigator.Item>
+				{this.renderTab('home')}
+				{this.renderTab('calendar')}
+				{this.renderTab('discover')}
+				{this.renderTab('profile')}
 			</TabNavigator>
 		);
 	}

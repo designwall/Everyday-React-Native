@@ -1,56 +1,72 @@
 import React, { Component } from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Swiper from '@src/components/Swiper';
-import Button from '@src/components/Button';
+import { View, Image, Text } from 'react-native';
+import Swiper from '../../src/components/Swiper';
+import Button from '../../src/components/Button';
+
+const img = {
+	background: require('../../assets/images/bg_gradient.png'),
+	logo: require('../../assets/images/app_logo.png'),
+	ic_facebook: require('../../assets/images/facebook.png'),
+	ic_google: require('../../assets/images/google.png'),
+};
+
+const sliderData = [
+	{ 
+		key: '1', 
+		title: 'Write Everyday', 
+		subtitle: 'Jott down your everyday.' 
+	},
+	{ 
+		key: '2', 
+		title: 'Get Inspired', 
+		subtitle: 'Fresh inspiration to get you going.' 
+	},
+	{ 
+		key: '3', 
+		title: 'Discover Journeys', 
+		subtitle: 'Follow people and be part of their life journey.' 
+	}
+];
 
 export default class Login extends Component {
 	render() {
 		const { 
-			imageBackgroundStyle, 
+			backgroundStyle, 
 			appNameStyle, 
-			loginHolderStyle, 
-			childViewStyle
+			loginHolderStyle
 		} = styles;
 
 		return (
 			<View style={{ flex: 1 }}>
 				<Image
-					style={imageBackgroundStyle}
-					source={require('../../assets/images/bg_gradient.png')}>
+					style={backgroundStyle}
+					source={img.background}>
 					
 					<View style={{ flex: 3, justifyContent: 'center', alignItems: 'center' }}>
 						<Image
-							source={require('../../assets/images/app_logo.png')}
+							source={img.logo}
 							style={{ width: 72, height: 48 }} />
-
 						<Text style={appNameStyle}>E V E R Y D A Y</Text>
 					</View>
 
 					<View style={{ flex: 2 }}>
-						<Swiper
-							data={[
-									{key: '1', title: 'Write Everyday', subtitle: 'Jott down your everyday.'},
-									{key: '2', title: 'Get Inspired', subtitle: 'Fresh inspiration to get you going.'},
-									{key: '3', title: 'Discover Journeys', subtitle: 'Follow people and be part of their life journey.'}
-							]}
-						/>
+						<Swiper data={sliderData} />
 					</View>
-					
 				</Image>
 				
 				<View style={loginHolderStyle}>
-					<View style={{ padding: 10 }}></View>
+					<View style={{ padding: 10 }} />
+
 					<View style={{ flex: 1, padding: 12 }}>
 						<Button
 							title="Login with Facebook"
 							backgroundColor="#3B5999"
 							textColor="#FFFFFF"
-							icon={require('../../assets/images/facebook.png')}
+							icon={img.ic_facebook}
 							iconWidth={10}
 							iconHeight={20}
 							onPress={() => {}}
-							rounded
-						/>
+							rounded />
 					</View>
 
 					<View style={{ flex: 1, padding: 12 }}>
@@ -58,26 +74,23 @@ export default class Login extends Component {
 							title="Login with Google"
 							backgroundColor="#FFFFFF"
 							textColor="#666666"
-							icon={require('../../assets/images/google.png')}
+							icon={img.ic_google}
 							iconWidth={19}
 							iconHeight={20}
 							borderWidth={1}
 							borderColor="#E6E6E6"
 							onPress={() => {}}
-							rounded
-						/>
+							rounded />
 					</View>
 
 					<View style={{ flex: 1, flexDirection: 'row' }}>
 						<Button
 							title="SIGN UP"
-							onPress={() => {}}
-						/>
+							onPress={() => {}} />
 						<Button
 							title="LOGIN"
 							textColor="#FD8C7E"
-							onPress={() => {}}
-						/>
+							onPress={() => {}} />
 					</View>
 				</View>
 			</View>
@@ -85,11 +98,11 @@ export default class Login extends Component {
 	}
 }
 
-const styles = StyleSheet.create({
-	imageBackgroundStyle: {
+const styles = {
+	backgroundStyle: {
 		flex: 2,
 		alignSelf: 'stretch',
-    	width: null,
+		width: null,
 		flexDirection: 'column'
 	},
 
@@ -108,4 +121,4 @@ const styles = StyleSheet.create({
 	loginHolderStyle: {
 		flex: 1
 	}
-});
+};

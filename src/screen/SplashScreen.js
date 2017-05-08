@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 
-class SplashScreen extends Component {
+const appIcon = require('../../assets/images/app_icon.png');
+
+export default class SplashScreen extends Component {
 	render() {
-		const { iconStyle, imageHolderStyle, titleStyle, subtitleStyle, textHolderStyle } = styles;
+		const { imageHolderStyle, titleStyle, subtitleStyle, textHolderStyle } = styles;
 
 		return (
 			<View style={{ flex: 1 }}>
 				<View style={imageHolderStyle}>
 					<Image 
-						source={require('../../assets/images/app_icon.png')}
-						style={{ width: 96, height: 96 }}
-					/>
+						source={appIcon}
+						style={{ width: 96, height: 96 }} />
 				</View>
 				<View style={textHolderStyle}>
 					<Text style={titleStyle}>E V E R Y D A Y</Text>
@@ -44,6 +45,4 @@ const styles = {
 		justifyContent: 'center', 
 		alignItems: 'center'
 	}
-}
-
-export default SplashScreen;
+};

@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 class Discover extends Component {
 	render() {
 		return (
-			<View style={{flex: 1, backgroundColor: 'green'}}>
+			<View style={{ flex: 1, backgroundColor: 'green' }}>
 				<Text>Discover</Text>
 			</View>
 		);
