@@ -76,7 +76,8 @@ export default class Main extends Component {
 				selected={this.state.selectedTab === 'add'}
 				renderIcon={() => <Image source={icon} />}
 				renderSelectedIcon={() => <Image source={iconSelected} />}
-				onPress={onPress}>
+				onPress={onPress}
+				hidesTabTouch>
 				{display}
 			</TabNavigator.Item>
 		);

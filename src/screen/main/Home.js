@@ -1,30 +1,11 @@
 import React, { Component } from 'react';
-import { View, FlatList, Dimensions, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Text from '../../components/Text';
 
 import Card from '../../components/Card';
-import gStyles from '../../styles';
+import globalStyles from '../../styles';
 
-const { 
-	paddingVertical12, 
-	trans50, 
-	flex1, 
-	flex2, 
-	transBg, 
-	flexRow,
-	alignRight, 
-	alignBottom, 
-	padding12, 
-	fontSize42, 
-	bold, 
-	thin, 
-	medium, 
-	orangeText, 
-	whiteText,
-	lightgrayText
-} = gStyles;
-
-const { width, height } = Dimensions.get('window');
+const { size, colors, fonts } = globalStyles;
 
 class Home extends Component {
 	constructor(props) {
@@ -52,98 +33,195 @@ class Home extends Component {
 					dayInWeek: 'SUN',
 					caption: 'What a way to start the year :)'
 				}
-			]
+			],
+			today: {
+				day: '05',
+				dayInWeek: 'Thursday',
+				monthYear: 'Jan 2017'
+			}
 		};
 	}
 
-	renderItem({ item }) {
+	renderRecentPostItem({ item }) {
 		const { textBigBlue, textSmallGray } = styles;
+		
 		return (
 			<Card
-				width={width / 2.5}
-				height={height / 6}>
+				width={size.byWidth(2.7)}
+				height={size.byWidth(4)}>
 
-				<View style={flexRow}>
-					<Text style={[textBigBlue, bold]}>{item.day}</Text>
-					<Text style={[textSmallGray, thin]}>{item.dayInWeek}</Text>
+				<View style={{ flexDirection: 'row' }}>
+					<Text style={textBigBlue}>{item.day}</Text>
+					<Text style={textSmallGray}>{item.dayInWeek}</Text>
 				</View>
 
-				<View style={flex1}>
-					<Text style={thin}>{item.caption}</Text>
+				<View style={{ flex: 1 }}>
+					<Text style={{ fontFamily: fonts.thin }}>{item.caption}</Text>
 				</View>
 			</Card>
 		); 
 	}
 
-	render() {
+	renderQuote() {
+		const wrapper = { 
+			flex: 2, 
+			backgroundColor: 'transparent', 
+			padding: size.toSize(12) 
+		};
+				
+
+		const divider = {
+			height: 1,
+			opacity: 0.5,
+			backgroundColor: colors.white,
+		};
+
 		return (
-			<View style={[flex1, transBg, { zIndex: 0 }]}>
-				<View style={[flex2, transBg, padding12]}>
-					<View style={flex1}>
-
-					</View>
-					<View style={[flex1, alignBottom]}>
-						<Text style={[fontSize42, bold, whiteText]}>
-							Add a little 
-						</Text>
-						<Text style={[fontSize42, bold, orangeText]}>
-							confetti
-						</Text>
-						<Text style={[fontSize42, bold, whiteText]}>
-							to each day.
-						</Text>
-
-						<Text style={[thin, whiteText, paddingVertical12, trans50]}>
-							Need more inspiration? Swipe aside!
-						</Text>
-					</View>
-				</View>
-
-				<View style={styles.wrapper}>
-					<View style={flexRow}>
-						<View style={flex1}>
-							<Text style={medium}>Recent Posts</Text>
-						</View>
-
-						<View style={[flex1, alignRight]}>
-							<Text style={[medium, lightgrayText]}>JAN 2017</Text>
-						</View>
-					</View>
+			<View style={wrapper}>
+				<View style={dateStyle.dateWrapper}>
+					<Text style={dateStyle.big}>{this.state.today.day}</Text>
 
 					<View>
-						<FlatList
-							data={this.state.listData}
-							renderItem={this.renderItem} 
-							keyExtractor={(item) => item.day}
-							horizontal
-							showsHorizontalScrollIndicator={false} />
+						<Text style={dateStyle.small}>{this.state.today.dayInWeek}</Text>
+						<Text style={dateStyle.small}>{this.state.today.monthYear}</Text>
+					</View>
+
+					<View style={dateStyle.chevronWrapper}>
+						<TouchableOpacity onPress={() => {}}>
+							<Image 
+								source={require('../../../assets/images/chevron_right.png')} 
+								style={dateStyle.icon} />
+						</TouchableOpacity>
 					</View>
 				</View>
+
+				<View style={divider} />
+
+				<View style={quoteStyle.titleWrapper}>
+					<Text style={quoteStyle.title}>
+						Add a little 
+						{'\n'}
+						<Text style={{ color: colors.orange }}>confetti</Text> 
+						{'\n'}
+						to each day.
+					</Text>
+					
+					<Text style={quoteStyle.subTitle}>Need more inspiration? Swipe aside!</Text>
+				</View>
+			</View>
+		);
+	}
+
+	renderRecentPost() {
+		const recentTitleWrapper = {
+			flex: 1, 
+			backgroundColor: colors.lightGray, 
+			paddingVertical: size.toSize(24), 
+			paddingHorizontal: size.toSize(16)
+		};
+
+		return (
+			<View style={recentTitleWrapper}>
+				<View style={{ flexDirection: 'row' }}>
+					<View style={{ flex: 1 }}>
+						<Text style={{ fontFamily: fonts.bold }}>Recent Posts</Text>
+					</View>
+
+					<View style={{ flex: 1, alignItems: 'flex-end' }}>
+						<Text style={{ fontFamily: fonts.medium, color: colors.gray }}>JAN 2017</Text>
+					</View>
+				</View>
+
+				<View>
+					<FlatList
+						data={this.state.listData}
+						renderItem={this.renderRecentPostItem} 
+						keyExtractor={(item) => item.day}
+						horizontal
+						showsHorizontalScrollIndicator={false} />
+				</View>
+			</View>
+		);
+	}
+
+	render() {
+		return (
+			<View style={styles.wrapper}>
+				{this.renderQuote()}
+				{this.renderRecentPost()}
 			</View>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
+	wrapper: { 
+		flex: 1, 
+		backgroundColor: 'transparent' 
+	},
+
 	textBigBlue: { 
-		color: '#82A0FA', 
-		fontSize: 32, 
+		color: colors.blue, 
+		fontFamily: fonts.bold,
+		fontSize: size.toSize(36),
 		opacity: 0.5, 
 		marginTop: -5 
 	},
 
 	textSmallGray: { 
-		color: '#C8C8C8', 
-		fontSize: 12, 
-		paddingLeft: 5 
+		color: colors.gray, 
+		fontSize: size.toSize(12), 
+		paddingLeft: size.toSize(5)
+	}
+});
+
+const dateStyle = StyleSheet.create({
+	dateWrapper: { 
+		flex: 1, 
+		flexDirection: 'row', 
+		alignItems: 'center' 
+	},
+	big: { 
+		color: colors.white, 
+		fontSize: size.toSize(45), 
+		fontFamily: fonts.bold, 
+		paddingRight: size.toSize(12) 
+	},
+	small: { 
+		color: colors.white, 
+		fontSize: size.toSize(16), 
+		opacity: 0.7, 
+		fontFamily: fonts.medium 
+	},
+	chevronWrapper: { 
+		flex: 1, 
+		alignItems: 'flex-end', 
+		justifyContent: 'center' 
+	},
+	icon: { 
+		width: size.toSize(7), 
+		height: size.toSize(12) 
+	}
+});
+
+const quoteStyle = StyleSheet.create({
+	titleWrapper: {
+		flex: 3, 
+		justifyContent: 'flex-end' 
 	},
 
-	wrapper: {
-		flex: 1, 
-		backgroundColor: '#F5F5F5', 
-		paddingVertical: 24, 
-		paddingHorizontal: 16
-	}	
+	title: {
+		fontSize: size.toSize(32), 
+		fontFamily: fonts.bold, 
+		color: colors.white
+	},
+
+	subTitle: {
+		fontFamily: fonts.thin, 
+		color: colors.white, 
+		paddingVertical: size.toSize(12), 
+		opacity: 0.5 
+	}
 });
 
 export default Home;

@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, Image, Dimensions } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import Text from './Text';
-import gStyles from '../styles';
-
-const { height } = Dimensions.get('window');
+import globalStyles from '../styles';
 
 const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight }) => {
 	return (
@@ -12,7 +10,7 @@ const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight }) => {
 				<Image source={iconLeft} style={styles.icon} />
 			</View>
 			<View style={styles.titleWrapper}>
-				<Text style={[styles.title, gStyles.medium]}>{title}</Text>
+				<Text style={[styles.title, globalStyles.medium]}>{title}</Text>
 			</View>
 			<View style={styles.iconRightWrapper}>
 				<Image source={iconRight} style={styles.icon} />
@@ -21,17 +19,20 @@ const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight }) => {
 	);
 };
 
-const styles = {
+const { size, colors, fonts } = globalStyles;
+
+const styles = StyleSheet.create({
 	wrapper: {
-		height: height / 8,
+		height: size.toSize(49),
+		padding: size.toSize(16),
+		marginTop: size.toSize(22),
 		flexDirection: 'row',
-		paddingTop: 20,
 		backgroundColor: 'transparent'
 	},
 
 	icon: {
-		width: 24,
-		height: 24
+		width: size.toSize(16),
+		height: size.toSize(16)
 	},
 
 	titleWrapper: {
@@ -41,22 +42,21 @@ const styles = {
 	},
 
 	title: {
-		color: 'white',
-		fontSize: 20
+		fontFamily: fonts.medium,
+		color: colors.white,
+		fontSize: size.toSize(22)
 	},
 
 	iconLeftWrapper: {
 		flex: 1, 
-		justifyContent: 'center',
-		paddingLeft: 20
+		justifyContent: 'center'
 	},
 
 	iconRightWrapper: {
 		flex: 1, 
 		justifyContent: 'center',
-		alignItems: 'flex-end',
-		paddingRight: 20
+		alignItems: 'flex-end'
 	}
-};
+});
 
 export default Header;
