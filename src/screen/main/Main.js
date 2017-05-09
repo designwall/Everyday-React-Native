@@ -55,7 +55,7 @@ export default class Main extends Component {
 	}
 
 	renderTab(tagName) {
-		const { icon, iconSelected, title, display, onPress } = tabInfo[tagName];
+		const { icon, iconSelected, title, display } = tabInfo[tagName];
 		return (
 			<TabNavigator.Item
 				selected={this.state.selectedTab === tagName}
@@ -68,12 +68,12 @@ export default class Main extends Component {
 		);
 	}
 
-	renderAddTab(tagName) {
-		const { icon, iconSelected, display, onPress } = tabInfo[tagName];
+	renderAddTab() {
+		const { icon, iconSelected, display, onPress } = tabInfo['add'];
 		return (
 			<TabNavigator.Item
 				tabStyle={{ height: 49 * 2 }}
-				selected={this.state.selectedTab === tagName}
+				selected={this.state.selectedTab === 'add'}
 				renderIcon={() => <Image source={icon} />}
 				renderSelectedIcon={() => <Image source={iconSelected} />}
 				onPress={onPress}>
@@ -93,10 +93,12 @@ export default class Main extends Component {
 						iconLeft={require('../../../assets/images/navigator.png')}
 						iconRight={require('../../../assets/images/notifications.png')}
 						title="Everyday" />
-					<TabNavigator>
+					<TabNavigator 
+						tabBarStyle={{ height: 49 * 2, backgroundColor: 'transparent' }}
+						tabBarShadowStyle={{ height: 0 }}>
 						{this.renderTab('home')}
 						{this.renderTab('calendar')}
-						{this.renderTab('add')}
+						{this.renderAddTab()}
 						{this.renderTab('discover')}
 						{this.renderTab('profile')}
 					</TabNavigator>

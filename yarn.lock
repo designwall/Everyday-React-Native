@@ -1761,7 +1761,7 @@ crc@3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/crc/-/crc-3.3.0.tgz#fa622e1bc388bf257309082d6b65200ce67090ba"
 
-create-react-class@^15.5.1, create-react-class@^15.5.2:
+create-react-class@^15.5.1:
   version "15.5.2"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.5.2.tgz#6a8758348df660b88326a0e764d569f274aad681"
   dependencies:
@@ -2402,7 +2402,7 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-expo@^16.0.0:
+expo@16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/expo/-/expo-16.0.0.tgz#859c5f9f9b91451f0c9989de40561ee026ea165e"
   dependencies:
@@ -4701,7 +4701,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.0.0, prop-types@^15.5.6, prop-types@^15.5.7:
+prop-types@^15.0.0, prop-types@^15.5.7:
   version "15.5.8"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
   dependencies:
@@ -4884,8 +4884,8 @@ react-native-tab-navigator@^0.3.3:
     immutable "^3.8.1"
 
 react-native-tab-navigator@scitbiz/react-native-tab-navigator:
-  version "0.3.3"
-  resolved "https://codeload.github.com/scitbiz/react-native-tab-navigator/tar.gz/9fbb71a3a099ff1c8f46b80a55b499d916e8d21a"
+  version "0.3.4"
+  resolved "https://codeload.github.com/scitbiz/react-native-tab-navigator/tar.gz/e90a2cf301824e361adf1f726581c8797ac61630"
   dependencies:
     immutable "^3.8.1"
 
@@ -5018,6 +5018,14 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
+react@16.0.0-alpha.3:
+  version "16.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-alpha.3.tgz#addfd7ae9d801fd20c6244142354ae0cb7b1fe00"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+
 react@^15.4.2:
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
@@ -5026,16 +5034,6 @@ react@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.7"
-
-react@^16.0.0-alpha.6:
-  version "16.0.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-alpha.12.tgz#8c59485281485df319b6f77682d8dd0621c08194"
-  dependencies:
-    create-react-class "^15.5.2"
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.6"
 
 read-chunk@^2.0.0:
   version "2.0.0"
