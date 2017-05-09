@@ -60,9 +60,23 @@ export default class Main extends Component {
 			<TabNavigator.Item
 				selected={this.state.selectedTab === tagName}
 				title={title}
-				renderIcon={() => <Image source={icon} style={{ zIndex: 1000 }} />}
-				renderSelectedIcon={() => <Image source={iconSelected} style={{ zIndex: 1000 }} />}
-				onPress={onPress == null ? () => this.setState({ selectedTab: tagName }) : onPress}>
+				renderIcon={() => <Image source={icon} />}
+				renderSelectedIcon={() => <Image source={iconSelected} />}
+				onPress={() => this.setState({ selectedTab: tagName })}>
+				{display}
+			</TabNavigator.Item>
+		);
+	}
+
+	renderAddTab(tagName) {
+		const { icon, iconSelected, display, onPress } = tabInfo[tagName];
+		return (
+			<TabNavigator.Item
+				tabStyle={{ height: 49 * 2 }}
+				selected={this.state.selectedTab === tagName}
+				renderIcon={() => <Image source={icon} />}
+				renderSelectedIcon={() => <Image source={iconSelected} />}
+				onPress={onPress}>
 				{display}
 			</TabNavigator.Item>
 		);
