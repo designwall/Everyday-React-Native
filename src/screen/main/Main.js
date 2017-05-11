@@ -15,25 +15,33 @@ const tabInfo = {
 	home: {
 		icon: require('../../../assets/images/home.png'),
 		iconSelected: require('../../../assets/images/home_s.png'),
-		title: 'Home',
+		title: 'Everyday',
+		headerRightIcon: require('../../../assets/images/notifications.png'),
+		onPressHeaderRightIcon: () => {},
 		display: <Home />
 	},
 	calendar: {
 		icon: require('../../../assets/images/calendar.png'),
 		iconSelected: require('../../../assets/images/calendar_s.png'),
 		title: 'Calendar',
+		headerRightIcon: require('../../../assets/images/view_day.png'),
+		onPressHeaderRightIcon: () => {},
 		display: <Calendar />
 	},
 	discover: {
 		icon: require('../../../assets/images/discover.png'),
 		iconSelected: require('../../../assets/images/discover_s.png'),
 		title: 'Discover',
+		headerRightIcon: require('../../../assets/images/notifications.png'),
+		onPressHeaderRightIcon: () => {},
 		display: <Discover />
 	},
 	profile: {
 		icon: require('../../../assets/images/profile.png'),
 		iconSelected: require('../../../assets/images/profile_s.png'),
 		title: 'Profile',
+		headerRightIcon: require('../../../assets/images/settings.png'),
+		onPressHeaderRightIcon: () => {},
 		display: <Profile />
 	},
 	add: {
@@ -59,7 +67,6 @@ export default class Main extends Component {
 		return (
 			<TabNavigator.Item
 				selected={this.state.selectedTab === tagName}
-				title={title}
 				renderIcon={() => <Image source={icon} />}
 				renderSelectedIcon={() => <Image source={iconSelected} />}
 				onPress={() => this.setState({ selectedTab: tagName })}>
@@ -92,8 +99,9 @@ export default class Main extends Component {
 				<View style={{ width, height, position: 'absolute', top: 0, left: 0 }}>
 					<Header 
 						iconLeft={require('../../../assets/images/navigator.png')}
-						iconRight={require('../../../assets/images/notifications.png')}
-						title="Everyday" />
+						iconRight={tabInfo[this.state.selectedTab].headerRightIcon}
+						title={tabInfo[this.state.selectedTab].title}
+						onPressRight={tabInfo[this.state.selectedTab].onPressHeaderRightIcon} />
 					<TabNavigator 
 						tabBarStyle={{ height: 49 * 2, backgroundColor: 'transparent' }}
 						tabBarShadowStyle={{ height: 0 }}>

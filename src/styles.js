@@ -24,7 +24,7 @@ const fonts = {
 	regular: 'ubuntu-regular'
 };
 
-export default {  
+export {  
 	size,
 	colors,
 	fonts

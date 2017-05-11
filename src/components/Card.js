@@ -1,10 +1,8 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-const Card = ({ width, height, marginHorizontal, marginVertical, children }) => {
-	const cardStyle = (width == null || height == null) 
-		? styles.wrapper 
-		: [styles.wrapper, { width, height }];
+const Card = ({ style, children }) => {
+	const cardStyle = [styles.wrapper, style];
 	
 	return (
 		<View style={cardStyle}>

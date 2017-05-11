@@ -4816,9 +4816,9 @@ react-devtools-core@^2.0.8:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-calendar@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/react-native-calendar/-/react-native-calendar-0.11.0.tgz#a94b836047359b7a8bd2d4a53b7bb0eb316218e8"
+react-native-calendar@scitbiz/react-native-calendar:
+  version "0.11.2"
+  resolved "https://codeload.github.com/scitbiz/react-native-calendar/tar.gz/9a31561ee7e276165939088cbfdb75c16f549271"
   dependencies:
     moment ">=2.10.3"
 

@@ -3,9 +3,7 @@ import { View, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-nativ
 import Text from '../../components/Text';
 
 import Card from '../../components/Card';
-import globalStyles from '../../styles';
-
-const { size, colors, fonts } = globalStyles;
+import { size, colors, fonts } from '../../styles';
 
 class Home extends Component {
 	constructor(props) {
@@ -47,8 +45,10 @@ class Home extends Component {
 		
 		return (
 			<Card
-				width={size.byWidth(2.7)}
-				height={size.byWidth(4)}>
+				style={{ 
+					width: size.byWidth(2.7),
+					height: size.byWidth(4)
+				}}>
 
 				<View style={{ flexDirection: 'row' }}>
 					<Text style={textBigBlue}>{item.day}</Text>

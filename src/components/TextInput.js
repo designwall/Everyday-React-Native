@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
-import globalStyles from '../styles';
+import { fonts, colors } from '../styles';
 
 class TextInputComponent extends Component {
 	constructor(props) {
@@ -12,8 +12,6 @@ class TextInputComponent extends Component {
 			placeholder: true
 		};
 	}
-
-
 
 	render() {
 		return (
@@ -34,16 +32,16 @@ const styles = StyleSheet.create({
 		borderRadius: 5, 
 		backgroundColor: 'white', 
 		padding: 5, 
-		fontFamily: globalStyles.fonts.regular,
+		fontFamily: fonts.regular,
 		textAlign: 'center',
 	},
 
 	placeHolder: {
-		color: globalStyles.colors.lightGray,
+		color: colors.lightGray,
 	},
 
 	text: {
-		color: globalStyles.colors.gray,
+		color: colors.gray,
 	}
 });
 

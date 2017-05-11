@@ -1,25 +1,27 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Text from './Text';
-import globalStyles from '../styles';
+import { size, colors, fonts } from '../styles';
 
 const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight }) => {
 	return (
 		<View style={styles.wrapper}>
 			<View style={styles.iconLeftWrapper}>
-				<Image source={iconLeft} style={styles.icon} />
+				<TouchableOpacity onPress={onPressLeft}>
+					<Image source={iconLeft} style={styles.icon} />
+				</TouchableOpacity>
 			</View>
 			<View style={styles.titleWrapper}>
-				<Text style={[styles.title, globalStyles.medium]}>{title}</Text>
+				<Text style={styles.title}>{title}</Text>
 			</View>
 			<View style={styles.iconRightWrapper}>
-				<Image source={iconRight} style={styles.icon} />
+				<TouchableOpacity onPress={onPressRight}>
+					<Image source={iconRight} style={styles.icon} />
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
 };
-
-const { size, colors, fonts } = globalStyles;
 
 const styles = StyleSheet.create({
 	wrapper: {
