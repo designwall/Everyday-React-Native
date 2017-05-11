@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Entypo } from '@expo/vector-icons';
-import { Text, View, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 import Calendar from 'react-native-calendar';
+import Text from '../../components/Text';
 import TextInput from '../../components/TextInput';
 import Card from '../../components/Card';
 
-import { fonts, colors, size } from '../../styles';
+import { fonts, colors, size, styles } from '../../styles';
 
 class CalendarScreen extends Component {
 	constructor(props) {
@@ -26,40 +27,54 @@ class CalendarScreen extends Component {
 
 	renderPostItem({ item }) {
 		return (
-			<Card style={{ flexDirection: 'row', marginHorizontal: 16, marginVertical: 10 }}>
-				<View style={{ alignItems: 'center', marginRight: 10 }}>
-					<Text style={{ color: colors.blue, opacity: 0.5, fontSize: 30, fontFamily: fonts.bold }}>{item.day}</Text>
-					<Text style={{ color: colors.blue, opacity: 0.5, fontSize: 12, fontFamily: fonts.bold, marginTop: -5 }}>{item.month}</Text>	
+			<Card style={cardStyles.wrapper}>
+				<View style={cardStyles.dateWrapper}>
+					<Text style={cardStyles.day}>{item.day}</Text>
+					<Text style={cardStyles.month}>{item.month}</Text>	
 				</View>
 				<View style={{ justifyContent: 'center' }}>
-					<Text style={{ color: colors.darkGray, fontFamily: fonts.medium, fontSize: 16 }}>{item.content}</Text>
-					<Text style={{ color: colors.gray, fontFamily: fonts.regular, fontSize: 12 }}>{item.time}</Text>
+					<Text style={styles.cardTitle}>{item.content}</Text>
+					<Text style={styles.cardSubtitle}>{item.time}</Text>
 				</View>
 			</Card>
 		);
 	}
 
 	render() {
+		const { wrapper, searchWrapper, icon, listWrapper } = calendarStyle;
+		
 		return (
-			<View style={{ flex: 1, backgroundColor: 'transparent' }}>
+			<View style={wrapper}>
 				<View style={{ flex: 2 }}>
-					<View style={{ padding: 12 }}>
-						<TextInput />
+					<View style={searchWrapper}>
+						<TextInput placeholder="🔍 Search through your posts" />
 					</View>
 					<View style={{ flex: 1 }}>
 						<Calendar 
-							customStyle={calendarStyle}
+							customStyle={calendarComponentStyle}
 							weekStart={0} 
 							selectedDayBackground={require('../../../assets/images/circle_s.png')} 
-							leftButton={<Entypo name="chevron-small-left" size={size.toSize(24)} color={colors.gray} style={{ opacity: 0.25 }} />}
-							rightButton={<Entypo name="chevron-small-right" size={size.toSize(24)} color={colors.gray} style={{ opacity: 0.25 }} />} 
+							leftButton={
+								<Entypo 
+									name="chevron-small-left" 
+									size={size.toSize(24)} 
+									color={colors.gray} 
+									style={icon} />
+							}
+							rightButton={
+								<Entypo 
+									name="chevron-small-right" 
+									size={size.toSize(24)} 
+									color={colors.gray} 
+									style={icon} />
+							} 
 							onDateSelect={(date) => { 
 								//List all posts the selected day 
 							}} 
 							showControls />
 					</View>
 				</View>
-				<View style={{ flex: 1, backgroundColor: colors.lightGray }}>
+				<View style={listWrapper}>
 					<FlatList 
 						data={this.state.postData}
 						renderItem={this.renderPostItem} />
@@ -69,7 +84,7 @@ class CalendarScreen extends Component {
 	}
 }
 
-const calendarStyle = StyleSheet.create({
+const calendarComponentStyle = StyleSheet.create({
 	calendarContainer: {
 		flex: 1,
 		backgroundColor: colors.white,
@@ -115,6 +130,54 @@ const calendarStyle = StyleSheet.create({
 		fontFamily: fonts.medium,
 		color: colors.darkGray,
     },
+});
+
+const cardStyles = StyleSheet.create({
+	wrapper: {
+		flexDirection: 'row', 
+		marginHorizontal: 16, 
+		marginVertical: 10
+	},
+
+	dateWrapper: {
+		alignItems: 'center', 
+		marginRight: 10
+	},
+
+	day: { 
+		color: colors.blue, 
+		opacity: 0.5, 
+		fontSize: 30, 
+		fontFamily: fonts.bold 
+	},
+
+	month: {
+		color: colors.blue, 
+		opacity: 0.5, 
+		fontSize: 12, 
+		fontFamily: fonts.bold, 
+		marginTop: -5
+	}
+});
+
+const calendarStyle = StyleSheet.create({
+	wrapper: { 
+		flex: 1, 
+		backgroundColor: 'transparent' 
+	},
+
+	searchWrapper: { 
+		padding: 12 
+	},
+
+	icon: { 
+		opacity: 0.25 
+	},
+
+	listWrapper: { 
+		flex: 1, 
+		backgroundColor: colors.lightGray 
+	}
 });
 
 export default CalendarScreen;

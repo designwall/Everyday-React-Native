@@ -1,4 +1,4 @@
-import { Dimensions, PixelRatio } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -21,11 +21,26 @@ const fonts = {
 	thin: 'ubuntu-light',
 	bold: 'ubuntu-bold',
 	medium: 'ubuntu-medium',
-	regular: 'ubuntu-regular'
+	regular: 'ubuntu-regular',
+	italic: 'ubuntu-italic'
 };
+
+const styles = StyleSheet.create({
+	cardTitle: {
+		color: colors.darkGray, 
+		fontFamily: fonts.medium, 
+		fontSize: 16
+	},
+	cardSubtitle: {
+		color: colors.gray, 
+		fontFamily: fonts.regular, 
+		fontSize: 12
+	}
+});
 
 export {  
 	size,
 	colors,
-	fonts
+	fonts,
+	styles
 };

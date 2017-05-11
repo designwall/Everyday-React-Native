@@ -25,7 +25,8 @@ class App extends Component {
 			'ubuntu-light': require('../assets/fonts/Ubuntu-L.ttf'),
 			'ubuntu-bold': require('../assets/fonts/Ubuntu-B.ttf'),
 			'ubuntu-medium': require('../assets/fonts/Ubuntu-M.ttf'),
-			'ubuntu-regular': require('../assets/fonts/Ubuntu-R.ttf')
+			'ubuntu-regular': require('../assets/fonts/Ubuntu-R.ttf'),
+			'ubuntu-italic': require('../assets/fonts/Ubuntu-RI.ttf')
 		});
 
 		this.setState({ fontLoading: false });

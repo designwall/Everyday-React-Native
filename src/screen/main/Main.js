@@ -63,7 +63,7 @@ export default class Main extends Component {
 	}
 
 	renderTab(tagName) {
-		const { icon, iconSelected, title, display } = tabInfo[tagName];
+		const { icon, iconSelected, display } = tabInfo[tagName];
 		return (
 			<TabNavigator.Item
 				selected={this.state.selectedTab === tagName}
@@ -76,7 +76,7 @@ export default class Main extends Component {
 	}
 
 	renderAddTab() {
-		const { icon, iconSelected, display, onPress } = tabInfo['add'];
+		const { icon, iconSelected, display, onPress } = tabInfo.add;
 		return (
 			<TabNavigator.Item
 				tabStyle={{ height: 49 * 2 }}

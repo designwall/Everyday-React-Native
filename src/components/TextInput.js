@@ -20,7 +20,7 @@ class TextInputComponent extends Component {
 					this.setState({ text, placeholder: text.length === 0 });
 				}}
 				style={[styles.textInput, this.state.placeHolder ? styles.placeholder : styles.text]} 
-				placeholder="🔍 Search through your posts" 
+				placeholder={this.props.placeholder} 
 				underlineColorAndroid='rgba(0,0,0,0)' />
 		);
 	}
