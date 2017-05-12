@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
 import { 
-	View, 
-	Text, 
+	View,
 	TouchableOpacity, 
 	Image 
 } from 'react-native';
+import Text from './Text';
+
+import { colors } from '../styles'; 
 
 export default class Button extends Component {
-	renderIcon() {
-		const { icon, iconWidth, iconHeight } = this.props;
-		return icon !== null
-			?	
-				<Image 
-					source={icon} 
-					style={{ width: iconWidth, height: iconHeight, marginRight: 20 }} /> 
-			: null;
-	}
-
 	render() {
 		const { 
-			rounded, 
-			backgroundColor, 
-			textColor, title, 
-			onPress, 
-			borderWidth, 
-			borderColor
+			icon, 
+			iconStyle,
+			title, 
+			titleStyle,
+			onPress,
 		} = this.props;
 
 		return (
@@ -33,18 +24,14 @@ export default class Button extends Component {
 				onPress={onPress}
 				activeOpacity={0.7}>
 				<View 
-					style={{
+					style={[{
 						padding: 16,
-						backgroundColor,
-						borderRadius: rounded ? 100 : 0,
-						borderWidth: borderWidth !== null ? borderWidth : 0,
-						borderColor: borderColor !== null ? borderColor : 0,
 						justifyContent: 'center',
 						alignItems: 'center',
 						flexDirection: 'row'
-					}}>
-					{this.renderIcon()} 
-					<Text style={{ color: textColor !== null ? textColor : '#666666' }}> {title}</Text>
+					}, this.props.style]}>
+					{icon ? <Image source={icon} style={iconStyle} /> : null} 
+					<Text style={[{ paddingLeft: 6, color: colors.darkGray }, titleStyle]}> {title}</Text>
 				</View>
 			</TouchableOpacity>
 

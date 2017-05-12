@@ -14,7 +14,10 @@ const colors = {
 	darkGray: '#666666',
 	gray: '#999999',
 	lightGray: '#F5F5F5',
-	blue: '#82A0FA'
+	blue: '#82A0FA',
+	pink: '#FD8C7E',
+	facebookBlue: '#3B5999',
+	googleGray: '#E6E6E6'
 };
 
 const fonts = {

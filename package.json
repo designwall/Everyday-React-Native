@@ -20,14 +20,17 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/ex-navigation": "^2.11.1",
     "expo": "16.0.0",
     "react": "16.0.0-alpha.3",
+    "react-mixin": "2",
     "react-native": "0.43.4",
     "react-native-calendar": "scitbiz/react-native-calendar",
     "react-native-elements": "0.11.2",
     "react-native-swiper": "1.5.4",
     "react-native-tab-navigator": "scitbiz/react-native-tab-navigator",
     "react-redux": "5.0.4",
+    "react-timer-mixin": "^0.13.3",
     "redux": "3.6.0",
     "redux-logger": "3.0.1",
     "redux-persist": "4.7.1",

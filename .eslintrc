@@ -3,6 +3,8 @@
 	"rules": {
 		"react/jsx-closing-bracket-location": [2, "after-props"],
 		"arrow-body-style": 1,
-		"global-require": 0
+		"global-require": 0,
+		"import/no-unresolved": 1,
+		"import/no-extraneous-dependencies": 0
 	}
 }

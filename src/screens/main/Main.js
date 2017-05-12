@@ -48,8 +48,7 @@ const tabInfo = {
 		icon: require('../../../assets/images/add.png'),
 		iconSelected: require('../../../assets/images/add.png'),
 		title: 'add',
-		display: null,
-		onPress: () => { console.log('Hello'); }
+		display: null
 	}
 };
 
@@ -76,14 +75,14 @@ export default class Main extends Component {
 	}
 
 	renderAddTab() {
-		const { icon, iconSelected, display, onPress } = tabInfo.add;
+		const { icon, iconSelected, display } = tabInfo.add;
 		return (
 			<TabNavigator.Item
 				tabStyle={{ height: 49 * 2 }}
 				selected={this.state.selectedTab === 'add'}
 				renderIcon={() => <Image source={icon} />}
 				renderSelectedIcon={() => <Image source={iconSelected} />}
-				onPress={onPress}
+				onPress={() => { this.props.navigator.push('NewPost'); }}
 				hidesTabTouch>
 				{display}
 			</TabNavigator.Item>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { Font } from 'expo';
-import configureStore from '../src/store';
+import { NavigationProvider, StackNavigation } from '@expo/ex-navigation';
+import Router from '@src/Router';
+import SplashScreen from './screens/SplashScreen';
 
-//import SplashScreen from '@src/screen/SplashScreen';
-//import Login from '@src/screen/Login';
-import Main from '../src/screen/main/Main';
+import configureStore from '@src/store';
 
 class App extends Component {
 	constructor(props) {
@@ -22,26 +22,32 @@ class App extends Component {
 
 	async componentDidMount() {
 		await Font.loadAsync({
-			'ubuntu-light': require('../assets/fonts/Ubuntu-L.ttf'),
-			'ubuntu-bold': require('../assets/fonts/Ubuntu-B.ttf'),
-			'ubuntu-medium': require('../assets/fonts/Ubuntu-M.ttf'),
-			'ubuntu-regular': require('../assets/fonts/Ubuntu-R.ttf'),
-			'ubuntu-italic': require('../assets/fonts/Ubuntu-RI.ttf')
+			'ubuntu-light': require('@fonts/Ubuntu-L.ttf'),
+			'ubuntu-bold': require('@fonts/Ubuntu-B.ttf'),
+			'ubuntu-medium': require('@fonts/Ubuntu-M.ttf'),
+			'ubuntu-regular': require('@fonts/Ubuntu-R.ttf'),
+			'ubuntu-italic': require('@fonts/Ubuntu-RI.ttf')
 		});
 
 		this.setState({ fontLoading: false });
 	}
 
 	render() {
-		if (this.state.loading || this.state.fontLoading) {
-			// loading screen here
+		if (this.state.fontLoading) {
 			return null;
 		}
 
+		if (this.state.loading) {
+			// loading screen here
+			return <SplashScreen />;
+		}
+
 		return (
-				<Provider store={this.state.store}>
-					<Main />
-				</Provider>
+			<Provider store={this.state.store}>
+				<NavigationProvider router={Router}>
+					<StackNavigation initialRoute="SplashScreen" />
+				</NavigationProvider>
+			</Provider>
 		);
 	}
 }
