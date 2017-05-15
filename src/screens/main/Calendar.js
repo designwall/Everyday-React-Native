@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Entypo } from '@expo/vector-icons';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList, Image } from 'react-native';
 import Calendar from 'react-native-calendar';
 import Text from '../../components/Text';
 import TextInput from '../../components/TextInput';
@@ -55,17 +54,13 @@ class CalendarScreen extends Component {
 							weekStart={0} 
 							selectedDayBackground={require('../../../assets/images/circle_s.png')} 
 							leftButton={
-								<Entypo 
-									name="chevron-small-left" 
-									size={size.toSize(24)} 
-									color={colors.gray} 
+								<Image 
+									source={require('@images/chevron_left_circle.png')}
 									style={icon} />
 							}
 							rightButton={
-								<Entypo 
-									name="chevron-small-right" 
-									size={size.toSize(24)} 
-									color={colors.gray} 
+								<Image 
+									source={require('@images/chevron_right_circle.png')}
 									style={icon} />
 							} 
 							onDateSelect={(date) => { 
@@ -171,7 +166,8 @@ const calendarStyle = StyleSheet.create({
 	},
 
 	icon: { 
-		opacity: 0.25 
+		width: size.toSize(23),
+		height: size.toSize(23)
 	},
 
 	listWrapper: { 

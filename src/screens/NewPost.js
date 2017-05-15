@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { View, Switch, TouchableOpacity, Image, TextInput, StyleSheet } from 'react-native';
+import { RichTextEditor, RichTextToolbar } from 'react-native-zss-rich-text-editor'
+
+import { screenAction } from '@src/functions';
 import { Text } from '@src/components';
 import { size, fonts, colors } from '@src/styles';
 
@@ -42,17 +45,22 @@ class NewPost extends Component {
 			inputContent
 		} = styles;
 
+		this.textEditor = <RichTextEditor ref={(r) => { this.richtext = r; }} />;
+		this.textToolbar = <RichTextToolbar getEditor={() => this.richtext} />;
 		return (
 			<View style={{ flex: 1 }}>
 				<View style={timeWrapper}>
 					<Text style={time}>Entry for January 4, 2017 | 10:30</Text>
 				</View>
 				<View style={inputWrapper}>
+					{this.textEditor}
+					{this.textToolbar}
+					{/*
 					<TextInput style={inputTitle} placeholder="Add a title" />
 					<TextInput 
 						multiline 
 						style={inputContent} 
-						placeholder="Start writing..." />
+						placeholder="Start writing..." />*/}
 				</View>
 			</View>
 		);
@@ -78,7 +86,7 @@ class NewPost extends Component {
 					</TouchableOpacity>
 				</View>
 				<View style={actionButton}>
-					<TouchableOpacity onPress={() => {}}>
+					<TouchableOpacity onPress={() => { this.richtext.insertImage({ src: 'https://wix.github.io/react-native-navigation/_images/logo.png' }); }}>
 						<Image source={require('@images/photo.png')} />
 					</TouchableOpacity>
 				</View>
@@ -110,7 +118,7 @@ class NewPost extends Component {
 						{this.renderActionButtonBar()}
 					</View>
 					<View style={closeButtonWrapper}>
-						<TouchableOpacity onPress={() => { this.props.navigator.pop(); }}>
+						<TouchableOpacity onPress={() => { this.props.navigation.dispatch(screenAction.back()); }}>
 							<Image source={require('@images/close.png')} style={closeButton} />
 						</TouchableOpacity>
 					</View>

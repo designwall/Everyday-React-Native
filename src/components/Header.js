@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
 	wrapper: {
 		height: size.toSize(49),
 		padding: size.toSize(16),
-		marginTop: size.toSize(22),
 		flexDirection: 'row',
 		backgroundColor: 'transparent'
 	},

@@ -2,41 +2,16 @@ import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import TimerMixin from 'react-timer-mixin';
 
+import { screenAction } from '@src/functions';
 import { Text } from '@src/components';
 import { size, colors } from '@src/styles';
 
 export default class SplashScreen extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			nextScreen: false
-		};
-
-		this.timeout = null;
-
-		this.goToMain = this.goToMain.bind(this);
-	}
-
 	componentDidMount() {
-		this.timeout = TimerMixin.setTimeout(this.goToMain, 3000);
-	}
-
-	componentDidUpdate() {
-		if (this.state.nextScreen) {
-			this.props.navigator.replace('Login');
-			return null;
-		}
-	}
-
-	componentWillUnmount() {
-		TimerMixin.clearTimeout(this.timeout);
-	}
-
-	goToMain = () => {
-			this.setState({
-				nextScreen: true
-			});
+		TimerMixin.setTimeout(() => {
+			console.log('Go to login screen');
+			this.props.navigation.dispatch(screenAction.replace('Login'));
+		}, 3000);
 	}
 
 	render() {
@@ -49,7 +24,7 @@ export default class SplashScreen extends Component {
 		} = styles;
 
 		return (
-			<View style={{ flex: 1 }}>
+			<View style={{ flex: 1, backgroundColor: 'white' }}>
 				<View style={imageHolderStyle}>
 					<Image 
 						source={require('@images/app_icon.png')}

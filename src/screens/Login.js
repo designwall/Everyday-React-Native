@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
-import { Text, Swiper, Button } from '@src/components';
 
+import { screenAction } from '@src/functions';
+import { Text, Swiper, Button } from '@src/components';
 import { size, colors, fonts } from '@src/styles';
 
 const sliderData = [
@@ -32,7 +33,7 @@ export default class Login extends Component {
 		} = styles;
 
 		return (
-			<View style={{ flex: 1 }}>
+			<View style={{ flex: 1, backgroundColor: 'white' }}>
 				<Image
 					style={backgroundStyle}
 					source={require('@images/bg_gradient.png')}>
@@ -61,7 +62,7 @@ export default class Login extends Component {
 							titleStyle={{ color: colors.white }}
 							icon={require('@images/facebook.png')}
 							iconStyle={{ width: size.toSize(8), height: size.toSize(16) }}
-							onPress={() => { this.props.navigator.replace('Main'); }} />
+							onPress={() => { this.props.navigation.dispatch(screenAction.replace('Main')); }} />
 					</View>
 
 					<View style={buttonWrapper}>

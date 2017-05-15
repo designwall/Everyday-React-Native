@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Dimensions } from 'react-native';
+import { View, Image, Dimensions, StatusBar } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 import Header from '../../components/Header';
@@ -13,40 +13,40 @@ const { width, height } = Dimensions.get('window');
 
 const tabInfo = {
 	home: {
-		icon: require('../../../assets/images/home.png'),
-		iconSelected: require('../../../assets/images/home_s.png'),
+		icon: require('@images/home.png'),
+		iconSelected: require('@images/home_s.png'),
 		title: 'Everyday',
-		headerRightIcon: require('../../../assets/images/notifications.png'),
+		headerRightIcon: require('@images/notifications.png'),
 		onPressHeaderRightIcon: () => {},
 		display: <Home />
 	},
 	calendar: {
-		icon: require('../../../assets/images/calendar.png'),
-		iconSelected: require('../../../assets/images/calendar_s.png'),
+		icon: require('@images/calendar.png'),
+		iconSelected: require('@images/calendar_s.png'),
 		title: 'Calendar',
-		headerRightIcon: require('../../../assets/images/view_day.png'),
+		headerRightIcon: require('@images/view_day.png'),
 		onPressHeaderRightIcon: () => {},
 		display: <Calendar />
 	},
 	discover: {
-		icon: require('../../../assets/images/discover.png'),
-		iconSelected: require('../../../assets/images/discover_s.png'),
+		icon: require('@images/discover.png'),
+		iconSelected: require('@images/discover_s.png'),
 		title: 'Discover',
-		headerRightIcon: require('../../../assets/images/notifications.png'),
+		headerRightIcon: require('@images/notifications.png'),
 		onPressHeaderRightIcon: () => {},
 		display: <Discover />
 	},
 	profile: {
-		icon: require('../../../assets/images/profile.png'),
-		iconSelected: require('../../../assets/images/profile_s.png'),
+		icon: require('@images/profile.png'),
+		iconSelected: require('@images/profile_s.png'),
 		title: 'Profile',
-		headerRightIcon: require('../../../assets/images/settings.png'),
+		headerRightIcon: require('@images/settings.png'),
 		onPressHeaderRightIcon: () => {},
 		display: <Profile />
 	},
 	add: {
-		icon: require('../../../assets/images/add.png'),
-		iconSelected: require('../../../assets/images/add.png'),
+		icon: require('@images/add.png'),
+		iconSelected: require('@images/add.png'),
 		title: 'add',
 		display: null
 	}
@@ -78,11 +78,11 @@ export default class Main extends Component {
 		const { icon, iconSelected, display } = tabInfo.add;
 		return (
 			<TabNavigator.Item
-				tabStyle={{ height: 49 * 2 }}
+				tabHeight={49 * 2}
 				selected={this.state.selectedTab === 'add'}
 				renderIcon={() => <Image source={icon} />}
 				renderSelectedIcon={() => <Image source={iconSelected} />}
-				onPress={() => { this.props.navigator.push('NewPost'); }}
+				onPress={() => { this.props.navigation.navigate('NewPost'); }}
 				hidesTabTouch>
 				{display}
 			</TabNavigator.Item>
@@ -90,20 +90,20 @@ export default class Main extends Component {
 	}
 
 	render() {
+		const statusbarHeight = StatusBar.currentHeight;
 		return (
-			<View style={{ flex: 1 }}>
+			<View style={{ flex: 1, backgroundColor: 'white' }}>
 				<Image
-					source={require('../../../assets/images/bg_gradient.png')} 
+					source={require('@images/bg_gradient.png')} 
 					style={{ width, height: height * (2 / 3) }} />
-				<View style={{ width, height, position: 'absolute', top: 0, left: 0 }}>
+				<View style={{ position: 'absolute', top: statusbarHeight, left: 0, bottom: 0, right: 0 }}>
 					<Header 
-						iconLeft={require('../../../assets/images/navigator.png')}
+						iconLeft={require('@images/navigator.png')}
 						iconRight={tabInfo[this.state.selectedTab].headerRightIcon}
 						title={tabInfo[this.state.selectedTab].title}
 						onPressRight={tabInfo[this.state.selectedTab].onPressHeaderRightIcon} />
 					<TabNavigator 
-						tabBarStyle={{ height: 49 * 2, backgroundColor: 'transparent' }}
-						tabBarShadowStyle={{ height: 0 }}>
+						tabBarStyle={{ height: 49 * 2 }}>
 						{this.renderTab('home')}
 						{this.renderTab('calendar')}
 						{this.renderAddTab()}

@@ -4,9 +4,9 @@ import Svg, {
     Circle,
     Polygon
 } from 'react-native-svg';
-import { size, colors, fonts } from '../../styles';
-import Text from '../../components/Text';
-import Card from '../../components/Card';
+import { size, colors, fonts } from '@src/styles';
+import Text from '@src/components/Text';
+import Card from '@src/components/Card';
 
 const padding10 = size.toSize(10);
 const cWrapper = {
@@ -85,7 +85,7 @@ class Profile extends Component {
 		return (
 			<Card style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingVertical: 40 }}>
 				<Image source={icon} />
-				<Text style={{ fontSize: 14, color: colors.darkGray }}>{text}</Text>
+				<Text style={{ fontSize: 14, color: colors.darkGray, marginTop: 10 }}>{text}</Text>
 			</Card>
 		);
 	}
@@ -97,21 +97,15 @@ class Profile extends Component {
 				<View style={{ flex: 1, backgroundColor: colors.lightGray }}>
 					<ScrollView>
 						<View style={{ flexDirection: 'row' }}>
-							{this.renderMenuItem(require('../../../assets/images/heart_s.png'), 'Favorites')}
-							{this.renderMenuItem(require('../../../assets/images/gps_s.png'), 'My Map')}
-							{this.renderMenuItem(require('../../../assets/images/email_s.png'), 'Drafts')}
+							{this.renderMenuItem(require('@images/heart_s.png'), 'Favorites')}
+							{this.renderMenuItem(require('@images/gps_s.png'), 'My Map')}
+							{this.renderMenuItem(require('@images/email_s.png'), 'Drafts')}
 						</View>
 
 						<View style={{ flexDirection: 'row' }}>
-							{this.renderMenuItem(require('../../../assets/images/heart_s.png'), 'Favorites')}
-							{this.renderMenuItem(require('../../../assets/images/gps_s.png'), 'My Map')}
-							{this.renderMenuItem(require('../../../assets/images/email_s.png'), 'Drafts')}
-						</View>
-
-						<View style={{ flexDirection: 'row' }}>
-							{this.renderMenuItem(require('../../../assets/images/heart_s.png'), 'Favorites')}
-							{this.renderMenuItem(require('../../../assets/images/gps_s.png'), 'My Map')}
-							{this.renderMenuItem(require('../../../assets/images/email_s.png'), 'Drafts')}
+							{this.renderMenuItem(require('@images/photo_s.png'), 'Photos')}
+							{this.renderMenuItem(require('@images/video_s.png'), 'Videos')}
+							{this.renderMenuItem(require('@images/static_s.png'), 'Statics')}
 						</View>
 					</ScrollView>
 				</View>
