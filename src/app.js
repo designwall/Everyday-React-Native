@@ -28,8 +28,7 @@ class App extends Component {
 					<StatusBar
 						backgroundColor="transparent"
 						barStyle="light-content"
-						translucent
-					/>
+						translucent />
 					<View style={{ flex: 1 }}>
 						<Navigator />
 					</View>

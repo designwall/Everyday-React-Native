@@ -78,7 +78,7 @@ export default class Login extends Component {
 							titleStyle={{ color: colors.darkGray }}
 							icon={require('@images/google.png')}
 							iconStyle={{ width: size.toSize(16), height: size.toSize(16) }}
-							onPress={() => { this.props.navigator.replace('Main'); }} />
+							onPress={() => { this.props.navigation.dispatch(screenAction.replace('Main')); }} />
 					</View>
 
 					<View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>

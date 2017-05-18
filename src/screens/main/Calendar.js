@@ -85,6 +85,10 @@ const calendarComponentStyle = StyleSheet.create({
 		backgroundColor: colors.white,
     },
 
+	selectedDayText: {
+		backgroundColor: 'transparent'
+	},
+
 	title: {
 		fontFamily: fonts.medium,
 		color: colors.blue,

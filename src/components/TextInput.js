@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import { TextInput, StyleSheet, Platform } from 'react-native';
 
-import { fonts, colors } from '../styles';
+import { fonts, colors, size } from '../styles';
 
 class TextInputComponent extends Component {
 	constructor(props) {
@@ -29,11 +29,14 @@ class TextInputComponent extends Component {
 
 const styles = StyleSheet.create({
 	textInput: {
-		borderRadius: 5, 
+		borderRadius: size.toSize(5), 
 		backgroundColor: 'white', 
-		padding: 5, 
+		padding: size.toSize(5), 
 		fontFamily: fonts.regular,
 		textAlign: 'center',
+		//For ios
+		height: size.toSize(30)
+
 	},
 
 	placeHolder: {

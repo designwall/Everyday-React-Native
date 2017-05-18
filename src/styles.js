@@ -21,11 +21,11 @@ const colors = {
 };
 
 const fonts = {
-	thin: 'Ubuntu-L',
-	bold: 'Ubuntu-B',
-	medium: 'Ubuntu-M',
-	regular: 'Ubuntu-R',
-	italic: 'Ubuntu-RI'
+	thin: 'Ubuntu-Light',
+	bold: 'Ubuntu-Bold',
+	medium: 'Ubuntu-Medium',
+	regular: 'Ubuntu',
+	italic: 'Ubuntu-Italic'
 };
 
 const styles = StyleSheet.create({

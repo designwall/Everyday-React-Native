@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow quick insert image using camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow insert Video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow insert Image</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

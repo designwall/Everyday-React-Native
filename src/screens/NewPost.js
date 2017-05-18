@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import { View, Switch, TouchableOpacity, Image, TextInput, StyleSheet } from 'react-native';
-import { RichTextEditor, RichTextToolbar } from 'react-native-zss-rich-text-editor'
+import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { RichTextEditor } from 'react-native-zss-rich-text-editor';
+import RNFetchBlob from 'react-native-fetch-blob';
 
 import { screenAction } from '@src/functions';
-import { Text } from '@src/components';
+import { Text, Picker } from '@src/components';
 import { size, fonts, colors } from '@src/styles';
 
+
 class NewPost extends Component {
+	constructor(props) {
+		super(props);
+
+		//this.richtext = null;
+	}
+
 	renderTitleBar() {
 		const { 
 			titleButtonWrapper, 
@@ -36,63 +44,43 @@ class NewPost extends Component {
 		);
 	}
 
+	addToInputText(type, data) {
+		console.log("test");
+		if (type === 'IMAGE') {
+			//console.log(data);
+			//this.richtext.insertImage({ src: 'https://wix.github.io/react-native-navigation/_images/logo.png' });
+			
+			//this.richtext.insertImage({ src: data });
+			RNFetchBlob.fs
+				.readFile(data, 'base64')
+				.then((base64) => {
+					console.log("Test");
+					this.richtext.insertImage({ src: `data:image/jpg;base64,${base64}` });
+				});
+		}
+	}
+
 	renderInputArea() {
 		const { 
 			timeWrapper,
 			time,
-			inputWrapper,
-			inputTitle,
-			inputContent
+			inputWrapper
 		} = styles;
 
-		this.textEditor = <RichTextEditor ref={(r) => { this.richtext = r; }} />;
-		this.textToolbar = <RichTextToolbar getEditor={() => this.richtext} />;
 		return (
-			<View style={{ flex: 1 }}>
+			<View 
+				style={{ flex: 1 }}>
+				
 				<View style={timeWrapper}>
-					<Text style={time}>Entry for January 4, 2017 | 10:30</Text>
+					<Text style={time}>
+						Entry for January 4, 2017 | 10:30
+					</Text>
 				</View>
 				<View style={inputWrapper}>
-					{this.textEditor}
-					{this.textToolbar}
-					{/*
-					<TextInput style={inputTitle} placeholder="Add a title" />
-					<TextInput 
-						multiline 
-						style={inputContent} 
-						placeholder="Start writing..." />*/}
-				</View>
-			</View>
-		);
-	}
-
-	renderActionButtonBar() {
-		const { 
-			actionButtonWrapper,
-			actionButton,
-			switchWrapper
-		} = styles;
-
-		return (
-			<View style={actionButtonWrapper}>
-				<View style={actionButton}>
-					<TouchableOpacity onPress={() => {}}>
-						<Image source={require('@images/calendar.png')} />
-					</TouchableOpacity>
-				</View>
-				<View style={actionButton}>
-					<TouchableOpacity onPress={() => {}}>
-						<Image source={require('@images/gps.png')} />
-					</TouchableOpacity>
-				</View>
-				<View style={actionButton}>
-					<TouchableOpacity onPress={() => { this.richtext.insertImage({ src: 'https://wix.github.io/react-native-navigation/_images/logo.png' }); }}>
-						<Image source={require('@images/photo.png')} />
-					</TouchableOpacity>
-				</View>
-				<View style={switchWrapper}>
-					<Text>Public </Text>
-					<Switch />
+					<RichTextEditor 
+						ref={(r) => { this.richtext = r; }} 
+						initialTitleHTML={'Title!!'}
+						initialContentHTML={'Hello <b>World</b> <p>this is a new paragraph</p> <p>this is another new paragraph</p>'} />
 				</View>
 			</View>
 		);
@@ -112,10 +100,10 @@ class NewPost extends Component {
 					source={require('@images/bg_gradient.png')} 
 					style={{ width: size.byWidth(1), height: size.byHeight(1.5) }} />
 				<View style={wrapper}>
+					{this.renderTitleBar()}
 					<View style={postWrapper}>
-						{this.renderTitleBar()}
 						{this.renderInputArea()}
-						{this.renderActionButtonBar()}
+						<Picker addToInputText={this.addToInputText.bind(this)} />
 					</View>
 					<View style={closeButtonWrapper}>
 						<TouchableOpacity onPress={() => { this.props.navigation.dispatch(screenAction.back()); }}>
@@ -147,6 +135,7 @@ const styles = StyleSheet.create({
 	},
 	titleButtonWrapper: { 
 		flexDirection: 'row', 
+		backgroundColor: 'white',
 		padding: 15, 
 		borderBottomWidth: 1, 
 		borderBottomColor: 
@@ -194,6 +183,7 @@ const styles = StyleSheet.create({
 	inputWrapper: { 
 		flex: 1, 
 		paddingTop: 30, 
+		paddingBottom: 40,
 		paddingHorizontal: 20 
 	},
 

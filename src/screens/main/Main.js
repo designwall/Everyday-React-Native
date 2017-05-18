@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Dimensions, StatusBar } from 'react-native';
+import { View, Image, Dimensions, StatusBar, Platform } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
 import Header from '../../components/Header';
@@ -8,6 +8,8 @@ import Home from './Home';
 import Calendar from './Calendar';
 import Discover from './Discover';
 import Profile from './Profile';
+
+import { size } from '@src/styles';
 
 const { width, height } = Dimensions.get('window');
 
@@ -96,14 +98,15 @@ export default class Main extends Component {
 				<Image
 					source={require('@images/bg_gradient.png')} 
 					style={{ width, height: height * (2 / 3) }} />
-				<View style={{ position: 'absolute', top: statusbarHeight, left: 0, bottom: 0, right: 0 }}>
+				<View style={{ width, height: height - 20, position: 'absolute', top: statusbarHeight, left: 0, bottom: 0, right: 0 }}>
 					<Header 
 						iconLeft={require('@images/navigator.png')}
 						iconRight={tabInfo[this.state.selectedTab].headerRightIcon}
 						title={tabInfo[this.state.selectedTab].title}
 						onPressRight={tabInfo[this.state.selectedTab].onPressHeaderRightIcon} />
 					<TabNavigator 
-						tabBarStyle={{ height: 49 * 2 }}>
+						tabBarStyle={{ height: 49 * 2 }}
+						shadowStyle={{ backgroundColor: 'transparent' }}>
 						{this.renderTab('home')}
 						{this.renderTab('calendar')}
 						{this.renderAddTab()}

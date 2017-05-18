@@ -834,6 +834,10 @@ balanced-match@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
 
+base-64@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+
 base64-js@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
@@ -1951,7 +1955,7 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1:
+glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.1:
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
   dependencies:
@@ -3517,6 +3521,10 @@ react-native-calendar@scitbiz/react-native-calendar:
   dependencies:
     moment ">=2.10.3"
 
+react-native-camera-roll-picker@scitbiz/react-native-camera-roll-picker:
+  version "1.1.10"
+  resolved "https://codeload.github.com/scitbiz/react-native-camera-roll-picker/tar.gz/835384972e60bd6233c9d10860834673a04b5575"
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
@@ -3533,6 +3541,21 @@ react-native-drawer-layout@1.2.0:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
+react-native-fetch-blob@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/react-native-fetch-blob/-/react-native-fetch-blob-0.10.5.tgz#498e5437ad604db126b46e4a06cd9cbf33d1ea42"
+  dependencies:
+    base-64 "0.1.0"
+    glob "^7.0.6"
+
+react-native-image-picker@^0.26.3:
+  version "0.26.3"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-0.26.3.tgz#0ad2eede49501a7046d8046a73813696539c3dcd"
+
+react-native-image-to-base64@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-image-to-base64/-/react-native-image-to-base64-0.1.0.tgz#195fd8ab0348dd72d1fa8a45778ef0cac835ba5b"
+
 react-native-svg@^5.1.8:
   version "5.1.8"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-5.1.8.tgz#bdb9bc6a8693852751f7faa6598ebcb3d1be48ce"
@@ -3545,8 +3568,8 @@ react-native-swiper@^1.5.4:
   resolved "https://registry.yarnpkg.com/react-native-swiper/-/react-native-swiper-1.5.4.tgz#a85535b5374ef8d605a7a720e447ac46816ac448"
 
 react-native-tab-navigator@scitbiz/react-native-tab-navigator:
-  version "0.3.4"
-  resolved "https://codeload.github.com/scitbiz/react-native-tab-navigator/tar.gz/d1f0a5af34d85bdd0b08d540adfc9ab12dd4b005"
+  version "0.3.6"
+  resolved "https://codeload.github.com/scitbiz/react-native-tab-navigator/tar.gz/ded76658951e34b85b3670f9c7478948488fd224"
   dependencies:
     immutable "^3.8.1"
 
@@ -3570,9 +3593,9 @@ react-native-webview-bridge@^0.33.0:
     invariant "2.2.0"
     keymirror "0.1.1"
 
-react-native-zss-rich-text-editor@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-zss-rich-text-editor/-/react-native-zss-rich-text-editor-1.0.2.tgz#87e5c448fe58081b51b947d077530700735a9ca6"
+react-native-zss-rich-text-editor@scitbiz/react-native-zss-rich-text-editor:
+  version "1.0.3"
+  resolved "https://codeload.github.com/scitbiz/react-native-zss-rich-text-editor/tar.gz/2d92515de43578854dbe9bef516250b7c5706602"
   dependencies:
     react-native-webview-bridge-updated "^1.0.0"
 
