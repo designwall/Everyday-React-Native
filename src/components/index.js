@@ -5,6 +5,7 @@ import Text from './Text';
 import TextInput from './TextInput';
 import Swiper from './Swiper';
 import Picker from './Picker';
+import Calendar from './Calendar';
 
 export { 
 	Button, 
@@ -13,5 +14,6 @@ export {
 	Text, 
 	TextInput, 
 	Swiper,
-	Picker
+	Picker,
+	Calendar
 };

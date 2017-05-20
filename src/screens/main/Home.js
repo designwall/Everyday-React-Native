@@ -44,21 +44,23 @@ class Home extends Component {
 		const { textBigBlue, textSmallGray } = styles;
 		
 		return (
-			<Card
-				style={{ 
-					width: size.byWidth(2.7),
-					height: size.byWidth(4)
-				}}>
+			<TouchableOpacity onPress={() => { this.props.navigation.navigate('Post'); }}>
+				<Card
+					style={{ 
+						width: size.byWidth(2.7),
+						height: size.byWidth(4)
+					}}>
 
-				<View style={{ flexDirection: 'row' }}>
-					<Text style={textBigBlue}>{item.day}</Text>
-					<Text style={textSmallGray}>{item.dayInWeek}</Text>
-				</View>
+					<View style={{ flexDirection: 'row' }}>
+						<Text style={textBigBlue}>{item.day}</Text>
+						<Text style={textSmallGray}>{item.dayInWeek}</Text>
+					</View>
 
-				<View style={{ flex: 1 }}>
-					<Text style={{ fontFamily: fonts.thin }}>{item.caption}</Text>
-				</View>
-			</Card>
+					<View style={{ flex: 1 }}>
+						<Text style={{ fontFamily: fonts.thin }}>{item.caption}</Text>
+					</View>
+				</Card>
+			</TouchableOpacity>
 		); 
 	}
 
@@ -135,7 +137,7 @@ class Home extends Component {
 				<View>
 					<FlatList
 						data={this.state.listData}
-						renderItem={this.renderRecentPostItem} 
+						renderItem={this.renderRecentPostItem.bind(this)} 
 						keyExtractor={(item) => item.day}
 						horizontal
 						showsHorizontalScrollIndicator={false} />

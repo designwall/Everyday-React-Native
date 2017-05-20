@@ -71,7 +71,10 @@ export default class Main extends Component {
 				renderIcon={() => <Image source={icon} />}
 				renderSelectedIcon={() => <Image source={iconSelected} />}
 				onPress={() => this.setState({ selectedTab: tagName })}>
-				{display}
+				{React.cloneElement(
+					display, 
+					{ navigation: this.props.navigation }
+				)}
 			</TabNavigator.Item>
 		);
 	}

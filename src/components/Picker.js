@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity, Image, Switch, StyleSheet } from 'react-native';
 import CameraRollPicker from 'react-native-camera-roll-picker';
+import MapView from 'react-native-maps';
 
-import { Text } from '@src/components';
+import { Text, Calendar } from '@src/components';
 import { size, fonts, colors } from '@src/styles';
 
 export default class Picker extends Component {
@@ -17,11 +18,13 @@ export default class Picker extends Component {
 		this.menu = {
 				Calendar: {
 					title: 'Select Date',
-					display: null
+					display: <Calendar onDateSelect={(date) => {}} />
 				},
 				Location: {
 					title: 'Add Location',
-					display: null
+					display: <MapView
+						style={{ ...StyleSheet.absoluteFillObject }}
+						onLongPress={({ coordinate }) => { console.log(coordinate); }} />
 				},
 				Photo: {
 					title: 'Add Photo',
@@ -66,7 +69,7 @@ export default class Picker extends Component {
 					<View 
 						style={{ 
 							position: 'absolute',
-							height: this.inputView.height / 2,
+							height: this.inputView.height * (2 / 3),
 							left: 0,
 							bottom: 0, 
 							right: 0, 
@@ -89,7 +92,9 @@ export default class Picker extends Component {
 									</TouchableOpacity>
 								</View>
 							</View>
-							{currentElement.display}
+							<View style={{ flex: 1 }}>
+								{currentElement.display}
+							</View>
 						</View>
 				</View>
 			);

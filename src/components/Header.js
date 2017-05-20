@@ -3,9 +3,9 @@ import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Text from './Text';
 import { size, colors, fonts } from '../styles';
 
-const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight }) => {
+const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight, style }) => {
 	return (
-		<View style={styles.wrapper}>
+		<View style={[styles.wrapper, style]}>
 			<View style={styles.iconLeftWrapper}>
 				<TouchableOpacity onPress={onPressLeft}>
 					<Image source={iconLeft} style={styles.icon} />

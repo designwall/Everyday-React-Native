@@ -6,6 +6,8 @@ const size = {
 	byWidth: (num) => width / num,
 	byHeight: (num) => height / num,
 	toSize: (num) => width / 350 * num,
+	screenHeight: height,
+	screenWidth: width
 };
 
 const colors = {

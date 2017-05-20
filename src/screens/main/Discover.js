@@ -59,15 +59,17 @@ class Discover extends Component {
 
 	renderPostItem({ item }) {
 		return (
-			<Card style={postStyles.wrapper}>
-				<View style={postStyles.avatarWrapper}>
-					<Image source={item.avatar} style={postStyles.avatar} />
-				</View>
-				<View style={postStyles.contentWrapper}>
-					<Text style={styles.cardTitle}>{item.content}</Text>
-					<Text style={styles.cardSubtitle}>{item.time} | {item.author}</Text>
-				</View>
-			</Card>
+			<TouchableOpacity onPress={() => { this.props.navigation.navigate('Post'); }}>
+				<Card style={postStyles.wrapper}>
+					<View style={postStyles.avatarWrapper}>
+						<Image source={item.avatar} style={postStyles.avatar} />
+					</View>
+					<View style={postStyles.contentWrapper}>
+						<Text style={styles.cardTitle}>{item.content}</Text>
+						<Text style={styles.cardSubtitle}>{item.time} | {item.author}</Text>
+					</View>
+				</Card>
+			</TouchableOpacity>
 		);
 	}
 
@@ -99,7 +101,7 @@ class Discover extends Component {
 					</View>
 					<FlatList 
 						data={this.state.postData} 
-						renderItem={this.renderPostItem} />
+						renderItem={this.renderPostItem.bind(this)} />
 				</View>
 			</View>
 		);
