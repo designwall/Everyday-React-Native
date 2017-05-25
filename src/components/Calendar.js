@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import Calendar from 'react-native-calendar';
-import { fonts, colors, size } from '@src/styles';
+import { fonts, colors, size } from '@src/config';
 
 export default class CalendarComponent extends Component {
 	render() {

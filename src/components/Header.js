@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Text from './Text';
-import { size, colors, fonts } from '../styles';
+import { size, colors, fonts } from '@src/config';
 
-const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight, style }) => {
+const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight, style, titleStyle, right }) => {
 	return (
 		<View style={[styles.wrapper, style]}>
 			<View style={styles.iconLeftWrapper}>
@@ -12,11 +12,14 @@ const Header = ({ title, iconLeft, iconRight, onPressLeft, onPressRight, style }
 				</TouchableOpacity>
 			</View>
 			<View style={styles.titleWrapper}>
-				<Text style={styles.title}>{title}</Text>
+				<Text style={[styles.title, titleStyle]}>{title}</Text>
 			</View>
 			<View style={styles.iconRightWrapper}>
 				<TouchableOpacity onPress={onPressRight}>
-					<Image source={iconRight} style={styles.icon} />
+					{iconRight 
+						? <Image source={iconRight} style={styles.icon} />
+						: right
+					}
 				</TouchableOpacity>
 			</View>
 		</View>

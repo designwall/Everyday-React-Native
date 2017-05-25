@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
-import Navigator from '@src/navigation/Navigator';
-import configureStore from '@src/store';
+import Navigator from '@src/config/navigation/Navigator';
+import configureStore from '@src/config/store';
 
 class App extends Component {
 	constructor(props) {

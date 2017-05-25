@@ -4,7 +4,7 @@ import CameraRollPicker from 'react-native-camera-roll-picker';
 import MapView from 'react-native-maps';
 
 import { Text, Calendar } from '@src/components';
-import { size, fonts, colors } from '@src/styles';
+import { colors } from '@src/config';
 
 export default class Picker extends Component {
 	constructor(props) {

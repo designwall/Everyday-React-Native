@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { colors } from '@src/styles';
+import { colors } from '@src/config';
 
 const Card = ({ style, children }) => {
 	const cardStyle = [styles.wrapper, style];

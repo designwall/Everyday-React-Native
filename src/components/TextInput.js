@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TextInput, StyleSheet, Platform } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
 
-import { fonts, colors, size } from '../styles';
+import { fonts, colors, size } from '@src/config';
 
 class TextInputComponent extends Component {
 	constructor(props) {

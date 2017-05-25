@@ -22,7 +22,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		22C7B1D730C1463F98963EA1 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 350A5D591C9A44ABB3B0D0B0 /* Ubuntu-B.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -35,18 +34,19 @@
 		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
 		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* everydayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* everydayTests.m */; };
-		3C02CDD4052E4B939AA9B64A /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B02B24AF23E4EC7950729B1 /* Ubuntu-L.ttf */; };
 		400F7F55928142DEA5E64C23 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A998034D944DFD8FB572E6 /* libRNImagePicker.a */; };
-		5396268640F94E088DE6373C /* Ubuntu-RI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03381B0893BE4FE8B2A33CA5 /* Ubuntu-RI.ttf */; };
+		47397C248F44487591B97E2F /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 485E8CD919824CEA87F33562 /* libRNFetchBlob.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
-		6976E57B960845B49DA11B94 /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC6DD59E8D3341DD9DD9C544 /* Ubuntu-M.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		F2AC8CD25ADD4F199FD26014 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 109BDF81393F4041BE7E2FE1 /* Ubuntu-R.ttf */; };
+		8E2622B7A64743C8A5DE6A51 /* libRNImageToBase64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F74D3653D21E43B2BA99E0BA /* libRNImageToBase64.a */; };
+		F97E53C993B54382B5C32420 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EE76CBA0F349CABC0C414E /* libAirMaps.a */; };
 		FB10BEAF1EC9A00200252DA3 /* libReact-Native-Webview-Bridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB10BEAE1EC99FF800252DA3 /* libReact-Native-Webview-Bridge.a */; };
 		FB694CBC1ECBE8DE00613F56 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB694CA21ECBE8D700613F56 /* libRCTCameraRoll.a */; };
-		8E2622B7A64743C8A5DE6A51 /* libRNImageToBase64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F74D3653D21E43B2BA99E0BA /* libRNImageToBase64.a */; };
-		47397C248F44487591B97E2F /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 485E8CD919824CEA87F33562 /* libRNFetchBlob.a */; };
-		F97E53C993B54382B5C32420 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19EE76CBA0F349CABC0C414E /* libAirMaps.a */; };
+		04501E0B8733436D8FDC240D /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 462C7A71910B405DA2F3DF14 /* Ubuntu-B.ttf */; };
+		C67005A15F3C4A4DB414BACB /* Ubuntu-L.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C71889063FD24A2099095A91 /* Ubuntu-L.ttf */; };
+		1B3946AB0B41499E9E15FCCF /* Ubuntu-M.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C753447D6CF140E992FD59C9 /* Ubuntu-M.ttf */; };
+		E64ED034993F4657BBF4B555 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D55DCEE0A34A432D93AAEB3D /* Ubuntu-R.ttf */; };
+		1C5035F50F1644DD9321E68C /* Ubuntu-RI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D87F30F4FB364898B75A60D8 /* Ubuntu-RI.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,6 +253,27 @@
 			remoteGlobalIDString = 58B5115D1A9E6B3D00147676;
 			remoteInfo = RCTCameraRoll;
 		};
+		FBA90C011ED6D57B00C80F81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 799F3BC81B05474B825DFD89 /* RNFetchBlob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A15C300E1CD25C330074CB35;
+			remoteInfo = RNFetchBlob;
+		};
+		FBA90C051ED6D57B00C80F81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 425E2EBC45F644E8BCF1D46A /* RNImageToBase64.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E7E77AF21D911ED5004B91C7;
+			remoteInfo = RNImageToBase64;
+		};
+		FBA90C0B1ED6D58D00C80F81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F938413368D2490BA51FE393 /* AirMaps.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
+			remoteInfo = AirMaps;
+		};
 		FBC8C6191ECA95270095C191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EBD35A87B5A8452C811B937F /* RNImagePicker.xcodeproj */;
@@ -279,8 +300,6 @@
 		00E356EE1AD99517003FC87E /* everydayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = everydayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* everydayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = everydayTests.m; sourceTree = "<group>"; };
-		03381B0893BE4FE8B2A33CA5 /* Ubuntu-RI.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-RI.ttf"; path = "../assets/fonts/Ubuntu-RI.ttf"; sourceTree = "<group>"; };
-		109BDF81393F4041BE7E2FE1 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-R.ttf"; path = "../assets/fonts/Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* everyday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = everyday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,26 +310,28 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = everyday/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = everyday/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		19EE76CBA0F349CABC0C414E /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* everyday-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "everyday-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* everyday-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "everyday-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		350A5D591C9A44ABB3B0D0B0 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-B.ttf"; path = "../assets/fonts/Ubuntu-B.ttf"; sourceTree = "<group>"; };
+		425E2EBC45F644E8BCF1D46A /* RNImageToBase64.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImageToBase64.xcodeproj; path = "../node_modules/react-native-image-to-base64/ios/RNImageToBase64.xcodeproj"; sourceTree = "<group>"; };
+		485E8CD919824CEA87F33562 /* libRNFetchBlob.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFetchBlob.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6974B1C0D9254E0A9B9A0CDA /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		7B02B24AF23E4EC7950729B1 /* Ubuntu-L.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-L.ttf"; path = "../assets/fonts/Ubuntu-L.ttf"; sourceTree = "<group>"; };
+		799F3BC81B05474B825DFD89 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8969D6884A1D437480F912EE /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
-		DC6DD59E8D3341DD9DD9C544 /* Ubuntu-M.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ubuntu-M.ttf"; path = "../assets/fonts/Ubuntu-M.ttf"; sourceTree = "<group>"; };
 		E1A998034D944DFD8FB572E6 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		EBD35A87B5A8452C811B937F /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
+		F74D3653D21E43B2BA99E0BA /* libRNImageToBase64.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImageToBase64.a; sourceTree = "<group>"; };
+		F938413368D2490BA51FE393 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		FB10BEA91EC99FF800252DA3 /* React-Native-Webview-Bridge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "React-Native-Webview-Bridge.xcodeproj"; path = "../node_modules/react-native-webview-bridge-updated/ios/React-Native-Webview-Bridge.xcodeproj"; sourceTree = "<group>"; };
 		FB694C9A1ECBE8D600613F56 /* RCTCameraRoll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCameraRoll.xcodeproj; path = "../node_modules/react-native/Libraries/CameraRoll/RCTCameraRoll.xcodeproj"; sourceTree = "<group>"; };
-		425E2EBC45F644E8BCF1D46A /* RNImageToBase64.xcodeproj */ = {isa = PBXFileReference; name = "RNImageToBase64.xcodeproj"; path = "../node_modules/react-native-image-to-base64/ios/RNImageToBase64.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		F74D3653D21E43B2BA99E0BA /* libRNImageToBase64.a */ = {isa = PBXFileReference; name = "libRNImageToBase64.a"; path = "libRNImageToBase64.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		799F3BC81B05474B825DFD89 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		485E8CD919824CEA87F33562 /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		F938413368D2490BA51FE393 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		19EE76CBA0F349CABC0C414E /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		462C7A71910B405DA2F3DF14 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; name = "Ubuntu-B.ttf"; path = "../src/assets/fonts/Ubuntu-B.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C71889063FD24A2099095A91 /* Ubuntu-L.ttf */ = {isa = PBXFileReference; name = "Ubuntu-L.ttf"; path = "../src/assets/fonts/Ubuntu-L.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C753447D6CF140E992FD59C9 /* Ubuntu-M.ttf */ = {isa = PBXFileReference; name = "Ubuntu-M.ttf"; path = "../src/assets/fonts/Ubuntu-M.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D55DCEE0A34A432D93AAEB3D /* Ubuntu-R.ttf */ = {isa = PBXFileReference; name = "Ubuntu-R.ttf"; path = "../src/assets/fonts/Ubuntu-R.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D87F30F4FB364898B75A60D8 /* Ubuntu-RI.ttf */ = {isa = PBXFileReference; name = "Ubuntu-RI.ttf"; path = "../src/assets/fonts/Ubuntu-RI.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,11 +455,11 @@
 		136B1BE3B7434953A7D2CB21 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				350A5D591C9A44ABB3B0D0B0 /* Ubuntu-B.ttf */,
-				7B02B24AF23E4EC7950729B1 /* Ubuntu-L.ttf */,
-				DC6DD59E8D3341DD9DD9C544 /* Ubuntu-M.ttf */,
-				109BDF81393F4041BE7E2FE1 /* Ubuntu-R.ttf */,
-				03381B0893BE4FE8B2A33CA5 /* Ubuntu-RI.ttf */,
+				462C7A71910B405DA2F3DF14 /* Ubuntu-B.ttf */,
+				C71889063FD24A2099095A91 /* Ubuntu-L.ttf */,
+				C753447D6CF140E992FD59C9 /* Ubuntu-M.ttf */,
+				D55DCEE0A34A432D93AAEB3D /* Ubuntu-R.ttf */,
+				D87F30F4FB364898B75A60D8 /* Ubuntu-RI.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -582,6 +603,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FBA90BF31ED6D57B00C80F81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBA90C021ED6D57B00C80F81 /* libRNFetchBlob.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBA90BF51ED6D57B00C80F81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBA90C061ED6D57B00C80F81 /* libRNImageToBase64.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBA90C081ED6D58D00C80F81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBA90C0C1ED6D58D00C80F81 /* libAirMaps.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FBC8C5FC1ECA95270095C191 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,6 +755,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = FBA90C081ED6D58D00C80F81 /* Products */;
+					ProjectRef = F938413368D2490BA51FE393 /* AirMaps.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -762,8 +811,16 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = FBA90BF31ED6D57B00C80F81 /* Products */;
+					ProjectRef = 799F3BC81B05474B825DFD89 /* RNFetchBlob.xcodeproj */;
+				},
+				{
 					ProductGroup = FBC8C5FC1ECA95270095C191 /* Products */;
 					ProjectRef = EBD35A87B5A8452C811B937F /* RNImagePicker.xcodeproj */;
+				},
+				{
+					ProductGroup = FBA90BF51ED6D57B00C80F81 /* Products */;
+					ProjectRef = 425E2EBC45F644E8BCF1D46A /* RNImageToBase64.xcodeproj */;
 				},
 				{
 					ProductGroup = FBFACA241EC96EA100D3E1A9 /* Products */;
@@ -970,6 +1027,27 @@
 			remoteRef = FB694CA11ECBE8D700613F56 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		FBA90C021ED6D57B00C80F81 /* libRNFetchBlob.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFetchBlob.a;
+			remoteRef = FBA90C011ED6D57B00C80F81 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FBA90C061ED6D57B00C80F81 /* libRNImageToBase64.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNImageToBase64.a;
+			remoteRef = FBA90C051ED6D57B00C80F81 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FBA90C0C1ED6D58D00C80F81 /* libAirMaps.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAirMaps.a;
+			remoteRef = FBA90C0B1ED6D58D00C80F81 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		FBC8C61A1ECA95270095C191 /* libRNImagePicker.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1000,11 +1078,11 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				22C7B1D730C1463F98963EA1 /* Ubuntu-B.ttf in Resources */,
-				3C02CDD4052E4B939AA9B64A /* Ubuntu-L.ttf in Resources */,
-				6976E57B960845B49DA11B94 /* Ubuntu-M.ttf in Resources */,
-				F2AC8CD25ADD4F199FD26014 /* Ubuntu-R.ttf in Resources */,
-				5396268640F94E088DE6373C /* Ubuntu-RI.ttf in Resources */,
+				04501E0B8733436D8FDC240D /* Ubuntu-B.ttf in Resources */,
+				C67005A15F3C4A4DB414BACB /* Ubuntu-L.ttf in Resources */,
+				1B3946AB0B41499E9E15FCCF /* Ubuntu-M.ttf in Resources */,
+				E64ED034993F4657BBF4B555 /* Ubuntu-R.ttf in Resources */,
+				1C5035F50F1644DD9321E68C /* Ubuntu-RI.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

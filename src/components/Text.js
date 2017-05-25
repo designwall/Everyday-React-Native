@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import { fonts, colors } from '../styles';
+import { fonts, colors } from '@src/config';
 
 export default ({ style, children }) => {
 	const textStyle = style instanceof Array 

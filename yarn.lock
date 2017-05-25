@@ -3541,6 +3541,12 @@ react-native-drawer-layout@1.2.0:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
+react-native-drawer@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.3.0.tgz#a0369ec80ff0b61c9f152dbdea91fe76c843113a"
+  dependencies:
+    tween-functions "^1.0.1"
+
 react-native-fetch-blob@^0.10.5:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/react-native-fetch-blob/-/react-native-fetch-blob-0.10.5.tgz#498e5437ad604db126b46e4a06cd9cbf33d1ea42"
@@ -3583,12 +3589,25 @@ react-native-tab-view@^0.0.61:
   dependencies:
     prop-types "^15.5.8"
 
+react-native-webview-bridge-updated@^1.0.0:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-webview-bridge-updated/-/react-native-webview-bridge-updated-1.0.8.tgz#8cbae2d45bc437fe9146d90a3b44dc9bd1ee8660"
+  dependencies:
+    invariant "2.2.0"
+    keymirror "0.1.1"
+
 react-native-webview-bridge@^0.33.0:
   version "0.33.0"
   resolved "https://registry.yarnpkg.com/react-native-webview-bridge/-/react-native-webview-bridge-0.33.0.tgz#7f9b7fb903b4ed13f4edcab52e654e9bffea4fd4"
   dependencies:
     invariant "2.2.0"
     keymirror "0.1.1"
+
+"react-native-zss-rich-text-editor@github:scitbiz/react-native-zss-rich-text-editor":
+  version "1.0.4"
+  resolved "https://codeload.github.com/scitbiz/react-native-zss-rich-text-editor/tar.gz/96df99714e8ad55de1e769c53b81bb2d82b70d04"
+  dependencies:
+    react-native-webview-bridge-updated "^1.0.0"
 
 react-native@0.44.0:
   version "0.44.0"
@@ -4379,6 +4398,10 @@ tunnel-agent@^0.6.0:
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
   dependencies:
     safe-buffer "^5.0.1"
+
+tween-functions@^1.0.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
