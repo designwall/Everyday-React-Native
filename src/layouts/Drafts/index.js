@@ -4,29 +4,19 @@ import { connect } from 'react-redux';
 import PostItem from '../Main/Discover/PostItem';
 import { Header } from '@src/components';
 import styles from './styles';
-import { size } from '@src/config';
 
 class Drafs extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			photos: [
-				'http://data.chiasenhac.com/data/cover/72/71613.jpg',
-				'http://data.chiasenhac.com/data/cover/72/71858.jpg',
-				'http://data.chiasenhac.com/data/cover/72/71614.jpg',
-				'http://data.chiasenhac.com/data/cover/72/71918.jpg',
-				'http://data.chiasenhac.com/data/cover/72/71917.jpg',
-				'http://data.chiasenhac.com/data/cover/72/71896.jpg',
-				'http://data.chiasenhac.com/data/cover/72/71869.jpg'
-			]
-		};
-	}
-
 	renderPostItem({ item }) {
-		console.log(item);
+		const currentUserId = this.props.currentUserId;
+		const user = this.props.users[item.userId];
+		const post = item; 
+
 		return (
-				<Image source={{ uri: item }} style={{ width: size.screenWidth / 2 - 16, height: size.screenHeight / 4, margin: 8 }} />
+			<PostItem
+				data={{ user, post }}
+				onPress={() => {
+					this.props.navigation.navigate('Post', { currentUserId, user, post });
+				}} />
 		);
 	}
 
@@ -38,19 +28,18 @@ class Drafs extends Component {
 					style={styles.backgroundImg} />
 				<View style={styles.viewWrapper}>
 					<Header 
-						title="Photos" 
+						title="Drafts" 
 						iconLeft={require('@images/arrow_back.png')} 
 						onPressLeft={() => { 
 							this.props.navigation.goBack(); 
 						}} />
 					<View style={styles.contentWrapper}>
 						<FlatList 
-							data={this.state.photos} 
+							data={this.props.posts} 
 							renderItem={this.renderPostItem.bind(this)}
-							numColumns={2}
-							keyExtractor={(item, index) => index} />
+							keyExtractor={(item) => item.id} />
+						</View>
 					</View>
-				</View>
 			</View>
 		);
 	}

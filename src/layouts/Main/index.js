@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, StatusBar } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Drawer from 'react-native-drawer';
+import { connect } from 'react-redux';
 
 import { Header } from '@src/components';
 import { size } from '@src/config';
@@ -17,7 +18,9 @@ const tabInfo = {
 		iconSelected: require('@images/home_s.png'),
 		title: 'Everyday',
 		headerRightIcon: require('@images/notifications.png'),
-		onPressHeaderRightIcon: () => {},
+		onPressHeaderRightIcon: (navigation) => {
+			navigation.navigate('Notifications');
+		},
 		display: <Home />
 	},
 	calendar: {
@@ -52,13 +55,20 @@ const tabInfo = {
 	}
 };
 
-export default class Main extends Component {
+class Main extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			selectedTab: 'home'
+			selectedTab: 'home',
 		};
+	}
+
+	componentWillMount() {
+		fetch('https://blog-mrp.rhcloud.com/wp-json/wp/v2/posts')
+			.then((response) => response.json())
+			.then((responseJson) => console.log(responseJson))
+			.catch((e) => console.log(e));
 	}
 
 	renderTab(tagName) {
@@ -71,7 +81,12 @@ export default class Main extends Component {
 				onPress={() => this.setState({ selectedTab: tagName })}>
 				{React.cloneElement(
 					display, 
-					{ navigation: this.props.navigation }
+					{ 
+						navigation: this.props.navigation,
+						currentUserId: this.props.currentUserId,
+						posts: this.props.posts,
+						users: this.props.users
+					}
 				)}
 			</TabNavigator.Item>
 		);
@@ -81,7 +96,7 @@ export default class Main extends Component {
 		const { icon, iconSelected, display } = tabInfo.add;
 		return (
 			<TabNavigator.Item
-				tabHeight={49 * 2}
+				tabHeight={49 * 2 - 20}
 				selected={this.state.selectedTab === 'add'}
 				renderIcon={() => <Image source={icon} />}
 				renderSelectedIcon={() => <Image source={iconSelected} />}
@@ -110,7 +125,7 @@ export default class Main extends Component {
 							iconRight={tabInfo[this.state.selectedTab].headerRightIcon}
 							title={tabInfo[this.state.selectedTab].title}
 							onPressLeft={() => { this.drawer.open(); }}
-							onPressRight={tabInfo[this.state.selectedTab].onPressHeaderRightIcon} />
+							onPressRight={() => { tabInfo[this.state.selectedTab].onPressHeaderRightIcon(this.props.navigation); }} />
 						<TabNavigator 
 							tabBarStyle={{ height: 49 * 2 }}
 							shadowStyle={{ backgroundColor: 'transparent' }}>
@@ -126,3 +141,13 @@ export default class Main extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		currentUserId: state.user.id,
+		posts: state.posts,
+		users: state.users
+	};
+};	
+
+export default connect(mapStateToProps)(Main);

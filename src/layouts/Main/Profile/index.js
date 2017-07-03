@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, ScrollView } from 'react-native';
+import { View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import Svg, { Circle, Polygon } from 'react-native-svg';
 import { size } from '@src/config';
@@ -21,6 +21,10 @@ const cImage = {
 
 
 class Profile extends Component {
+
+	moveToScreen(target) {
+		this.props.navigation.navigate(target);
+	}
 
 	renderProfileBackground() {
 		const { user } = this.props;
@@ -81,12 +85,14 @@ class Profile extends Component {
 		);
 	}
 
-	renderMenuItem(icon, text) {
+	renderMenuItem(icon, text, name = 'Maps') {
 		return (
-			<Card style={menuIcon.wrapper}>
-				<Image source={icon} />
-				<Text style={menuIcon.label}>{text}</Text>
-			</Card>
+			<TouchableOpacity style={{ flex: 1 }} onPress={() => { this.moveToScreen(name); }}>
+				<Card style={menuIcon.wrapper}>
+					<Image source={icon} />
+					<Text style={menuIcon.label}>{text}</Text>
+				</Card>
+			</TouchableOpacity>
 		);
 	}
 
@@ -99,11 +105,11 @@ class Profile extends Component {
 						<View style={styles.rowWrapper}>
 							{this.renderMenuItem(require('@images/heart_s.png'), 'Favorites')}
 							{this.renderMenuItem(require('@images/gps_s.png'), 'My Map')}
-							{this.renderMenuItem(require('@images/email_s.png'), 'Drafts')}
+							{this.renderMenuItem(require('@images/email_s.png'), 'Drafts', 'Drafts')}
 						</View>
 
 						<View style={styles.rowWrapper}>
-							{this.renderMenuItem(require('@images/photo_s.png'), 'Photos')}
+							{this.renderMenuItem(require('@images/photo_s.png'), 'Photos', 'Photos')}
 							{this.renderMenuItem(require('@images/video_s.png'), 'Videos')}
 							{this.renderMenuItem(require('@images/static_s.png'), 'Statics')}
 						</View>

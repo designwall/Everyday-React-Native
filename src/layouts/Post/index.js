@@ -34,7 +34,7 @@ class Post extends Component {
 	renderCommentsCard() {
 		return this.state.showComments 
 			? <CommentsCard 
-				comments={this.props.post.comments}
+				comments={this.props.navigation.state.params.post.comments}
 				onPressClose={() => 
 					this.setState({ showComments: false })
 				} /> 
@@ -42,6 +42,7 @@ class Post extends Component {
 	}
 
 	renderBottomBar() {
+		const { loves, comments } = this.props.navigation.state.params.post;
 		return (
 			<View style={styles.bottombarWrapper}>
 				<View style={styles.heartCommentWrapper}>
@@ -50,14 +51,14 @@ class Post extends Component {
 						<Image 
 							source={require('@images/heart.png')} 
 							style={styles.heartIcon} />
-						<Text style={styles.textIcon}> 342</Text> 
+						<Text style={styles.textIcon}> {loves.length}</Text> 
 					</TouchableOpacity>
 
 					<TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => { this.setState({ showComments: true }); }}>
 						<Image 
 							source={require('@images/chat.png')} 
 							style={styles.commentIcon} />
-						<Text style={styles.textIcon}> 20</Text>
+						<Text style={styles.textIcon}> {comments.length}</Text>
 					</TouchableOpacity>
 				</View>
 
@@ -67,13 +68,15 @@ class Post extends Component {
 	}
 
 	renderAuthor() {
-		return this.props.userId === this.props.post.userId
-			? <Text style={styles.author}>{this.props.author.name.toUpperCase()}</Text> 
+		const { currentUserId, user } = this.props.navigation.state.params;
+		const postUserId = this.props.navigation.state.params.post.userId;
+		return currentUserId === postUserId
+			? <Text style={styles.author}>{user.name.toUpperCase()}</Text> 
 			: null;
 	}
 
 	render() {
-		const { time, title, content } = this.props.post;
+		const { time, title, content } = this.props.navigation.state.params.post;
 		const date = getDate(time);
 
 		return (
@@ -121,13 +124,4 @@ class Post extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	return {
-		userId: state.user.id,
-		post: state.post,
-		author: state.users[state.post.userId],
-		users: state.users
-	};
-};
-
-export default connect(mapStateToProps)(Post);
+export default Post;

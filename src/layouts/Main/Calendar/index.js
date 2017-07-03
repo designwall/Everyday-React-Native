@@ -7,22 +7,6 @@ import styles from './styles';
 import PostCard from './PostCard';
 
 class CalendarScreen extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			postData: [
-				{
-					key: 1,
-					day: '03',
-					month: 'JAN',
-					content: 'A slow but sure to start',
-					time: 'Tuesday, 11:30 AM'
-				}
-			]
-		};
-	}
-
 	onDateSelect(date) {
 
 	}
@@ -40,12 +24,13 @@ class CalendarScreen extends Component {
 				</View>
 				<View style={styles.listWrapper}>
 					<FlatList 
-						data={this.state.postData}
+						data={this.props.posts}
 						renderItem={({ item }) =>
 							<PostCard 
 								data={item}
 								onPress={() => { this.props.navigation.navigate('Post'); }} />
-						} />
+						}
+						keyExtractor={(item) => item.id} />
 				</View>
 			</View>
 		);

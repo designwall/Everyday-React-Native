@@ -1,50 +1,53 @@
 import React, { Component } from 'react';
 import { View, FlatList, TouchableOpacity, Image } from 'react-native';
+import { connect } from 'react-redux';
 import { Text } from '@src/components';
 import RecentPostItem from './RecentPostItem';
 import styles, { currentDate, quoteStyle } from './styles';
+import { updateRecentPosts } from '@src/config/actions';
 
 class Home extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			listData: [
-				{
-					day: '04',
-					dayInWeek: 'WED',
-					caption: 'Almost start!!'
-				},
-				{
-					day: '03',
-					dayInWeek: 'TUE',
-					caption: 'A slow but sure start.'
-				},
-				{
-					day: '02',
-					dayInWeek: 'MON',
-					caption: 'First working day of the new year!'
-				},
-				{
-					day: '01',
-					dayInWeek: 'SUN',
-					caption: 'What a way to start the year :)'
-				}
-			],
 			today: {
 				day: '05',
 				dayInWeek: 'Thursday',
 				monthYear: 'Jan 2017'
-			}
+			},
+
 		};
 	}
 
+	componentWillMount() {
+		const currentYear = new Date().getFullYear();
+
+		const orderBy = 'date';
+		const order = 'desc';
+		const limit = 5;
+		const dateFrom = `${currentYear}-01-01T00:00:00`;
+		const dateTo = `${currentYear}-12-31T11:59:59`;
+
+		fetch(`https://blog-mrp.rhcloud.com/wp-json/wp/v2/posts?orderby=${orderBy}&order=${order}&per_page=${limit}&after=${dateFrom}&before=${dateTo}`)
+			.then((response) => response.json())
+			.then((responseJson) => {
+				console.log(responseJson);
+				this.props.updateRecentPosts(responseJson);
+			})
+			.catch((e) => console.log(e));
+	}
+
 	renderRecentPostItem({ item }) {
+		const currentUserId = this.props.currentUserId;
+		const user = this.props.user;
+		const post = item; 
+		
 		return (
 			<RecentPostItem
-				data={item}
+				data={{ user, post }}
 				onPress={() => { 
-					this.props.navigation.navigate('Post'); 
+					this.props.navigation.navigate('Post', { currentUserId, user, post }); 
 				}} />
 		); 
 	}
@@ -101,9 +104,9 @@ class Home extends Component {
 
 				<View>
 					<FlatList
-						data={this.state.listData}
+						data={this.props.recentPosts}
 						renderItem={this.renderRecentPostItem.bind(this)} 
-						keyExtractor={(item) => item.day}
+						keyExtractor={(item) => item.id}
 						horizontal
 						showsHorizontalScrollIndicator={false} />
 				</View>
@@ -121,4 +124,10 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+	return {
+		recentPosts: state.recentPosts
+	};
+};
+
+export default connect(mapStateToProps, { updateRecentPosts })(Home);

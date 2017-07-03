@@ -5,67 +5,20 @@ import PostItem from './PostItem';
 import styles from './styles';
 
 class Discover extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			postData: [
-				{
-					key: 1,
-					avatar: require('@images/avatar_default.jpg'),
-					content: 'Soaring in the Destiny',
-					time: '03:02 PM',
-					author: 'Christina Munoz'
-				},
-				{
-					key: 2,
-					avatar: require('@images/avatar_default.jpg'),
-					content: 'Lets all be unique together',
-					time: '02:27 PM',
-					author: 'Jerry Powers'
-				},
-				{
-					key: 3,
-					avatar: require('@images/avatar_default.jpg'),
-					content: 'Sometimes, all you need to do...',
-					time: '02:46 AM',
-					author: 'Ellen Beck'
-				},
-				{
-					key: 4,
-					avatar: require('@images/avatar_default.jpg'),
-					content: 'A slow but sure to start.',
-					time: '09:29 AM',
-					author: 'Adele McKenzie'
-				},
-				{
-					key: 5,
-					avatar: require('@images/avatar_default.jpg'),
-					content: 'What was the person thinking...',
-					time: '09:29 AM',
-					author: 'Garrett Jordan'
-				},
-				{
-					key: 6,
-					avatar: require('@images/avatar_default.jpg'),
-					content: 'First working day of the new year!',
-					time: '08:30 AM',
-					author: 'Adele McKezie'
-				}
-			]
-		};
-	}
 
 	onCalendarIconPress() {
 		//Do something here
 	}
 
 	renderPostItem({ item }) {
+		const currentUserId = this.props.currentUserId;
+		const user = this.props.users[item.userId];
+		const post = item; 
 		return (
 			<PostItem
-				data={item}
+				data={{ user, post }}
 				onPress={() => {
-					this.props.navigation.navigate('Post');
+					this.props.navigation.navigate('Post', { currentUserId, user, post });
 				}} />
 		);
 	}
@@ -88,8 +41,9 @@ class Discover extends Component {
 						</View>
 					</View>
 					<FlatList 
-						data={this.state.postData} 
-						renderItem={this.renderPostItem.bind(this)} />
+						data={this.props.posts} 
+						renderItem={this.renderPostItem.bind(this)}
+						keyExtractor={(item) => item.id} />
 				</View>
 			</View>
 		);
